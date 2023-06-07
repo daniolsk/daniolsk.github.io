@@ -48,15 +48,6 @@
   opacity: 1;
 }
 
-.image {
-  background-size: 130%;
-  transition: background-size 0.3s ease-out;
-}
-
-.image:hover {
-  background-size: 150% !important;
-}
-
 .section:has(> div > .menu:hover) > .bgPattern {
   background-size: 5vmin 5vmin;
 }

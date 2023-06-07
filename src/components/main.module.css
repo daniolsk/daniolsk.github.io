@@ -1,6 +1,6 @@
 .menuElement {
   position: relative;
-  transition: all 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .menuElement:hover {
@@ -15,7 +15,7 @@
   background-color: white;
   left: 0;
   bottom: 0;
-  transition: all 0.3s ease-out;
+  transition: width 0.3s ease-out;
 }
 
 .menuElement:hover::after {

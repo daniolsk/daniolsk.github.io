@@ -1,15 +1,33 @@
 .section:has(> div > .menu:hover) > .bgPattern {
-  background-size: 4.5vmin 4.5vmin;
+  background-size: 8vmin 8vmin;
 }
 
 .section[data-active-index="0"] > .bgPattern {
-  background-position: 0% -15%;
+  background-position: -15% 0%;
 }
 
 .section[data-active-index="1"] > .bgPattern {
-  background-position: 0% -25%;
+  background-position: -30% 0%;
 }
 
 .section[data-active-index="2"] > .bgPattern {
-  background-position: 0% -35%;
+  background-position: -45% 0%;
+}
+
+@media (min-width: 768px) {
+  .section:has(> div > .menu:hover) > .bgPattern {
+    background-size: 4.5vmin 4.5vmin;
+  }
+
+  .section[data-active-index="0"] > .bgPattern {
+    background-position: 0% -15%;
+  }
+
+  .section[data-active-index="1"] > .bgPattern {
+    background-position: 0% -30%;
+  }
+
+  .section[data-active-index="2"] > .bgPattern {
+    background-position: 0% -45%;
+  }
 }

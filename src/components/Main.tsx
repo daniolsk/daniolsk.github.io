@@ -1,28 +1,43 @@
 "use client";
 
-import { useRef, useEffect, MouseEvent, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 const Main = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const mainTitleRef = useRef<HTMLDivElement>(null);
 
-  const [activeTab, setActiveTab] = useState<number>();
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   useEffect(() => {
     const menu = menuRef.current;
     const section = sectionRef.current;
 
+    if (!menu || !section) return;
+
     Array.from(menu.children).forEach((item, index) => {
-      item.onmouseover = () => {
-        section.dataset.activeIndex = index;
+      (item as HTMLElement).onmouseover = () => {
+        section.dataset.activeIndex = index.toString();
       };
     });
   }, []);
+
+  const renderSwitch = (id: number) => {
+    switch (id) {
+      case 0:
+        return <AboutMe />;
+      case 1:
+        return <Projects />;
+      case 2:
+        return <Contact />;
+      default:
+        return "";
+    }
+  };
 
   return (
     <section
@@ -77,7 +92,7 @@ const Main = () => {
           </button>
         </div>
       </div>
-      <div className="h-full w-full flex-1">123</div>
+      {renderSwitch(activeTab)}
     </section>
   );
 };

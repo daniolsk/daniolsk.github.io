@@ -12,6 +12,8 @@ const Main = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const mainTitleRef = useRef<HTMLDivElement>(null);
 
+  const [activeTab, setActiveTab] = useState(null);
+
   useEffect(() => {
     const menu = menuRef.current;
     const section = sectionRef.current;
@@ -61,7 +63,12 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.5, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
+            onClick={() => {
+              setActiveTab(0);
+            }}
+            className={`${style.menuElement} ${
+              activeTab == 0 ? "!translate-x-[30px]" : ""
+            } cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             About Me
           </motion.button>
@@ -72,7 +79,13 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.6, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
+            active={activeTab == 1 ? true : false}
+            onClick={() => {
+              setActiveTab(1);
+            }}
+            className={`${style.menuElement} ${
+              activeTab == 1 ? "!translate-x-[30px]" : ""
+            } cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             Projects
           </motion.button>
@@ -83,7 +96,13 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.7, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
+            onClick={() => {
+              setActiveTab(2);
+            }}
+            active={activeTab == 2 ? true : false}
+            className={`${style.menuElement} ${
+              activeTab == 2 ? "!translate-x-[30px]" : ""
+            } cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             Contact
           </motion.button>

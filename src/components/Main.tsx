@@ -1,7 +1,7 @@
 //@ts-nocheck
 "use client";
 
-import { useRef, useEffect, MouseEvent } from "react";
+import { useRef, useEffect, MouseEvent, useState } from "react";
 import style from "./main.module.css";
 
 import Image from "next/image";
@@ -26,29 +26,33 @@ const Main = () => {
   return (
     <section
       ref={sectionRef}
-      className={`${style.section} relative flex min-h-screen w-full items-center justify-start overflow-hidden pl-32`}
+      className={`${style.section} relative flex min-h-screen w-full items-start justify-start overflow-hidden pl-[10vw] md:items-center`}
     >
-      <div className={`${style.bgPattern}`}></div>
+      <motion.div
+        initial={{ backgroundSize: "3vmin 3vmin" }}
+        animate={{ backgroundSize: "4vmin 4vmin" }}
+        className={`${style.bgPattern}`}
+      ></motion.div>
       <div className="flex flex-col items-start">
-        <div className="mb-16" ref={mainTitleRef}>
+        <div className="mb-8 mt-8 md:mb-10 md:mt-0 xl:mb-16" ref={mainTitleRef}>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1, transition: { delay: 0.2 } }}
-            className="whitespace-nowrap text-6xl font-bold tracking-tighter"
+            className="whitespace-nowrap text-4xl font-bold tracking-tighter sm:text-4xl md:text-5xl 2xl:text-6xl"
           >
             Daniel Skowron
           </motion.div>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
-            className="text-xl font-normal"
+            className="font-normal sm:text-lg md:text-xl 2xl:text-2xl"
           >
             Web developer and designer.
           </motion.div>
         </div>
         <div
           ref={menuRef}
-          className={`${style.menu} flex flex-col items-start gap-8`}
+          className={`${style.menu} flex flex-col items-start gap-4 md:gap-6 xl:gap-8`}
         >
           <motion.button
             initial={{ x: -30, opacity: 0 }}
@@ -57,7 +61,7 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.5, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             About Me
           </motion.button>
@@ -68,7 +72,7 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.6, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             Projects
           </motion.button>
@@ -79,7 +83,7 @@ const Main = () => {
               opacity: 1,
               transition: { delay: 0.7, ease: "easeOut" },
             }}
-            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-lg font-medium md:text-3xl xl:text-4xl`}
           >
             Contact
           </motion.button>

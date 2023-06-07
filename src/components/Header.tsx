@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <section
       ref={sectionRef}
-      className={`${style.section} relative flex min-h-screen w-full items-center justify-between overflow-hidden px-32`}
+      className={`${style.section} relative flex min-h-screen w-full items-center justify-around overflow-hidden`}
     >
       <div className={`${style.bgPattern}`}></div>
       <div className={`${style.bgImage}`}></div>
@@ -40,17 +40,17 @@ const Header = () => {
           className={`${style.menu} flex flex-col items-start gap-8`}
         >
           <div
-            className={`${style.menuElement} cursor-pointer p-2 text-5xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
           >
             About Me
           </div>
           <div
-            className={`${style.menuElement} cursor-pointer p-2 text-5xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
           >
             Projects
           </div>
           <div
-            className={`${style.menuElement} cursor-pointer p-2 text-5xl font-medium`}
+            className={`${style.menuElement} cursor-pointer p-2 text-4xl font-medium`}
           >
             Contact
           </div>
@@ -59,7 +59,7 @@ const Header = () => {
       <div className="relative">
         <div className="absolute left-3 top-3 -z-[1] h-full w-full bg-white"></div>
         <div
-          className={`${style.image} aspect-square w-[40vw] bg-[url(/me.jpg)] bg-center bg-no-repeat`}
+          className={`${style.image} aspect-square w-[40vw] bg-[url(/me.jpg)] bg-center bg-no-repeat xl:w-[30vw]`}
         ></div>
       </div>
     </section>

@@ -17,6 +17,10 @@
     animation: slideLeft 0.3s ease-out;
     animation-fill-mode: backwards;
   }
+  .animate-sliderightdown {
+    animation: slideRightDown 0.3s ease-out;
+    animation-fill-mode: backwards;
+  }
   .animate-slideleft-bg {
     animation: slideLeftBg 1s ease-out;
     animation-fill-mode: backwards;
@@ -78,5 +82,16 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slideRightDown {
+  from {
+    opacity: 0;
+    transform: translate(12px, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
 }

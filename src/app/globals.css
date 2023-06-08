@@ -29,6 +29,14 @@
     animation: slideLeftBgMobile 1s ease-out;
     animation-fill-mode: backwards;
   }
+  .animate-slideleft-bg-img {
+    animation: slideLeftBg 1s ease-out;
+    animation-fill-mode: backwards;
+  }
+  .animate-slideleft-bg-img-mobile {
+    animation: slideLeftBgMobile 1s ease-out;
+    animation-fill-mode: backwards;
+  }
 }
 
 * {
@@ -71,6 +79,28 @@ body {
   to {
     opacity: 0.8;
     background-size: 6vmin 6vmin;
+  }
+}
+
+@keyframes slideLeftBgImg {
+  from {
+    opacity: 0;
+    background-size: 100%;
+  }
+  to {
+    opacity: 0.8;
+    background-size: 120%;
+  }
+}
+
+@keyframes slideLeftBgImgMobile {
+  from {
+    opacity: 0;
+    background-size: 100%;
+  }
+  to {
+    opacity: 0.8;
+    background-size: 120%;
   }
 }
 

@@ -12,7 +12,7 @@ const Main = () => {
   const mainTitleRef = useRef<HTMLDivElement>(null);
   const trailerRef = useRef<HTMLDivElement>(null);
 
-  const [activeTab, setActiveTab] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<number | null>(0);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -60,30 +60,33 @@ const Main = () => {
   return (
     <section
       ref={sectionRef}
-      className={`${style.section} relative flex min-h-screen w-full flex-1 flex-col justify-center overflow-hidden md:flex-row md:items-center md:justify-start md:pl-[5vw]`}
+      className={`${style.section} relative flex min-h-screen w-full flex-1 flex-col justify-center overflow-hidden lg:flex-row lg:items-center lg:justify-start lg:pl-[5vw]`}
     >
       <div
         ref={trailerRef}
         className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-5 w-5 rounded-full bg-white opacity-0 contrast-100 transition-all duration-700 ease-out`}
       ></div>
       <div
-        className={`${style.bgPattern} animate-slideleft-bg-mobile md:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-[100vh] w-full bg-[length:6vmin_6vmin] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
+        className={`${style.bgImage} .animate-slideleft-bg-img-mobile lg:.animate-slideleft-bg-img absolute left-0 top-0 -z-20 h-[100vh] w-full bg-gradient-to-r from-slate-900 to-purple-900 bg-[length:120%] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:120%]`}
       ></div>
-      <div className="flex flex-col items-center md:items-start">
+      <div
+        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-[100vh] w-full bg-[length:6vmin_6vmin] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:4vmin_4vmin]`}
+      ></div>
+      <div className="flex flex-col items-center lg:items-start">
         <div
-          className="my-4 sm:my-8 md:mb-10 md:mt-0 xl:mb-16"
+          className="my-4 sm:my-8 lg:mb-10 lg:mt-0 xl:mb-16"
           ref={mainTitleRef}
         >
-          <div className="animate-fadein whitespace-nowrap text-4xl font-bold tracking-tighter animation-delay-[200] sm:text-4xl md:text-5xl 2xl:text-6xl">
+          <div className="animate-fadein whitespace-nowrap text-4xl font-bold tracking-tighter animation-delay-[200] sm:text-4xl lg:text-5xl 2xl:text-6xl">
             Daniel Skowron
           </div>
-          <div className="animate-fadein text-center font-normal animation-delay-[300] sm:text-lg md:text-left md:text-xl 2xl:text-2xl">
+          <div className="animate-fadein text-center font-normal animation-delay-[300] sm:text-lg lg:text-left lg:text-xl 2xl:text-2xl">
             Web developer and designer.
           </div>
         </div>
         <div
           ref={menuRef}
-          className={`${style.menu} group flex w-full flex-row items-center justify-around md:w-auto md:flex-col md:items-start md:justify-center md:gap-6 xl:gap-8`}
+          className={`${style.menu} group flex w-full flex-row items-center justify-around pb-4 lg:w-auto lg:flex-col lg:items-start lg:justify-center lg:gap-6 xl:gap-8`}
         >
           <button
             onClick={() => {
@@ -91,7 +94,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 0 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg md:text-xl md:hover:translate-x-4 md:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             About Me
           </button>
@@ -101,7 +104,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 1 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg md:text-xl md:hover:translate-x-4 md:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             Projects
           </button>
@@ -111,7 +114,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 2 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg md:text-xl md:hover:translate-x-4 md:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             Contact
           </button>

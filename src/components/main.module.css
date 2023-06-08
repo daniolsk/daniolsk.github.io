@@ -15,7 +15,7 @@
 }
 
 .section:has(> div > .menu:hover) > .bgImage {
-  background-size: 200%;
+  background-size: 200% 200%;
 }
 
 .section[data-active-index="0"] > .bgImage {
@@ -52,7 +52,7 @@
   }
 
   .section:has(> div > .menu:hover) > .bgImage {
-    background-size: 230%;
+    background-size: 230% 230%;
   }
 
   .section[data-active-index="0"] > .bgImage {

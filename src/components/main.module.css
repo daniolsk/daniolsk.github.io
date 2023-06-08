@@ -14,6 +14,22 @@
   background-position: -45% 0%;
 }
 
+.section:has(> div > .menu:hover) > .bgImage {
+  background-size: 200%;
+}
+
+.section[data-active-index="0"] > .bgImage {
+  background-position: 15% 0%;
+}
+
+.section[data-active-index="1"] > .bgImage {
+  background-position: 40% 0%;
+}
+
+.section[data-active-index="2"] > .bgImage {
+  background-position: 65% 0%;
+}
+
 @media (min-width: 768px) {
   body:hover .trailer {
     opacity: 0.6;
@@ -33,5 +49,21 @@
 
   .section[data-active-index="2"] > .bgPattern {
     background-position: 0% -45%;
+  }
+
+  .section:has(> div > .menu:hover) > .bgImage {
+    background-size: 230%;
+  }
+
+  .section[data-active-index="0"] > .bgImage {
+    background-position: 0% 15%;
+  }
+
+  .section[data-active-index="1"] > .bgImage {
+    background-position: 0% 40%;
+  }
+
+  .section[data-active-index="2"] > .bgImage {
+    background-position: 0% 65%;
   }
 }

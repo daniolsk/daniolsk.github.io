@@ -30,7 +30,7 @@
   background-position: 65% 0%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   body:hover .trailer {
     opacity: 0.6;
   }

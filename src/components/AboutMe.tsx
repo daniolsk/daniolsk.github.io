@@ -4,7 +4,7 @@ import React from "react";
 const AboutMe = () => {
   return (
     <div className="mt-5 flex h-full w-full flex-1 flex-col items-center justify-start gap-8 overflow-auto lg:mt-0 lg:justify-center lg:gap-12 lg:px-[10vw]">
-      <div className="animate-fadein relative mx-10 my-4 flex flex-col gap-2 border-2 border-white bg-black p-4 text-white sm:px-14 lg:p-6">
+      <div className="animate-fadein relative mx-10 my-4 flex flex-col gap-2 border-2 border-white bg-gradient-to-b from-gray-900 to-violet-900 p-4 text-white md:mx-20 md:p-8 lg:mx-0 lg:p-12">
         <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[800]"></div>
         <div className="animate-fadein lg:text-3lg text-lg font-bold animation-delay-[100]">
           Who am I?
@@ -19,7 +19,7 @@ const AboutMe = () => {
           humans.
         </div>
       </div>
-      <div className="animate-fadein relative mx-10 my-4 mb-8 flex flex-col gap-2 border-2 border-white bg-black p-4 text-white sm:px-14 lg:p-6">
+      <div className="animate-fadein relative mx-10 my-4 flex flex-col gap-2 border-2 border-white bg-gradient-to-b from-gray-900 to-violet-900 p-4 text-white md:mx-20 md:p-8 lg:mx-0 lg:p-12">
         <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[800]"></div>
         <div className="animate-fadein lg:text-3lg text-lg font-bold animation-delay-[400]">
           What do I do?

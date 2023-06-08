@@ -1,9 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="mt-4 flex h-full w-full flex-1 flex-col items-center justify-start overflow-auto md:justify-center md:px-[5vw] xl:gap-6 xl:px-[10vw]">
-      <div className="flex flex-col gap-2 p-6 sm:px-14">
+    <div className="mt-4 flex h-full w-full flex-1 flex-col items-center justify-start gap-8 overflow-auto md:mt-0 md:justify-center md:px-[5vw] xl:gap-12 xl:px-[10vw]">
+      <div className="animate-fadein relative flex flex-col gap-2 border-2 border-white bg-black p-4 text-white sm:px-14 xl:p-6">
+        <div className="animate-fadein absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[1000]"></div>
         <div className="animate-fadein text-xl font-bold animation-delay-[100] xl:text-3xl">
           Who am I?
         </div>
@@ -17,7 +19,8 @@ const AboutMe = () => {
           humans.
         </div>
       </div>
-      <div className="flex flex-col gap-2 p-6 sm:px-14">
+      <div className="animate-fadein relative flex flex-col gap-2 border-2 border-white bg-black p-4 text-white sm:px-14 xl:p-6">
+        <div className="animate-fadein absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[1000]"></div>
         <div className="animate-fadein text-xl font-bold animation-delay-[400] xl:text-3xl">
           What do I do?
         </div>

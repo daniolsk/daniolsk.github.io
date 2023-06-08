@@ -12,7 +12,7 @@ const Main = () => {
   const mainTitleRef = useRef<HTMLDivElement>(null);
   const trailerRef = useRef<HTMLDivElement>(null);
 
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<number | null>(null);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -67,7 +67,7 @@ const Main = () => {
         className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-5 w-5 rounded-full bg-white opacity-0 contrast-100 transition-all duration-700 ease-out`}
       ></div>
       <div
-        className={`${style.bgPattern} animate-slideleft-bg-mobile md:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-[100vh] w-full bg-[length:6vmin_6vmin] bg-[0%_-35%] opacity-80 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
+        className={`${style.bgPattern} animate-slideleft-bg-mobile md:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-[100vh] w-full bg-[length:6vmin_6vmin] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
       ></div>
       <div className="flex flex-col items-center md:items-start">
         <div
@@ -117,7 +117,7 @@ const Main = () => {
           </button>
         </div>
       </div>
-      {renderSwitch(activeTab)}
+      {activeTab != null ? renderSwitch(activeTab) : ""}
     </section>
   );
 };

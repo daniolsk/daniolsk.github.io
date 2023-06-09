@@ -67,10 +67,10 @@ const Main = () => {
         className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-5 w-5 rounded-full bg-white opacity-0 contrast-100 transition-all duration-700 ease-out`}
       ></div>
       <div
-        className={`${style.bgImage} .animate-slideleft-bg-img-mobile lg:.animate-slideleft-bg-img absolute left-0 top-0 -z-20 h-full w-full bg-gradient-to-r from-slate-900 to-purple-900 bg-[length:120%] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:120%]`}
+        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img absolute left-0 top-0 -z-30 h-full w-full bg-gradient-to-r from-slate-900 to-teal-900 bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:120%_120%]`}
       ></div>
       <div
-        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_-35%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:4vmin_4vmin]`}
+        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:4vmin_4vmin]`}
       ></div>
       <div className="flex flex-col items-center lg:items-start">
         <div

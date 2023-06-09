@@ -6,6 +6,13 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      boxShadow: {
+        "3xl": "5px 5px 30px -1px rgba(0, 0, 0, 0.4)",
+      },
+    },
+  },
   plugins: [
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities({

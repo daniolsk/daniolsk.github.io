@@ -12,7 +12,7 @@ const Main = () => {
   const mainTitleRef = useRef<HTMLDivElement>(null);
   const trailerRef = useRef<HTMLDivElement>(null);
 
-  const [activeTab, setActiveTab] = useState<number | null>(0);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -44,6 +44,33 @@ const Main = () => {
     };
   }, []);
 
+  const handleScroll = (e: React.WheelEvent<HTMLElement>) => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    if (e.deltaY > 0) {
+      let nextIndex = activeTab;
+
+      if (activeTab == 2) {
+        nextIndex = 0;
+      } else {
+        nextIndex = nextIndex + 1;
+      }
+      section.dataset.activeIndex = nextIndex.toString();
+      setActiveTab(nextIndex);
+    } else {
+      let nextIndex = activeTab;
+
+      if (activeTab == 0) {
+        nextIndex = 2;
+      } else {
+        nextIndex = nextIndex - 1;
+      }
+      section.dataset.activeIndex = nextIndex.toString();
+      setActiveTab(nextIndex);
+    }
+  };
+
   const renderSwitch = (id: number) => {
     switch (id) {
       case 0:
@@ -60,6 +87,7 @@ const Main = () => {
   return (
     <section
       ref={sectionRef}
+      onWheel={(e) => handleScroll(e)}
       className={`${style.section} relative flex min-h-screen w-full flex-1 flex-col justify-center overflow-hidden lg:flex-row lg:items-center lg:justify-start lg:pl-[5vw]`}
     >
       <div

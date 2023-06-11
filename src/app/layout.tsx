@@ -5,7 +5,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Daniel Skowron",
-  description: "Daniel Skowron - designer and developer",
+  description: "A web developer and designer based in Kraków, Poland.",
 };
 
 export default function RootLayout({

@@ -18,7 +18,7 @@ const Projects = ({
         </div>
         <div className="mb-4 text-sm lg:text-2xl">GYM TRACKING APP</div>
         <div className="mb-4 flex space-x-4 overflow-x-scroll">
-          <img src="/21shots_so.webp" alt="" />
+          <img src="21shots_so.webp" alt="" />
           <img src="Muscler (1).png" alt="" />
           <img src="33shots_so.webp" alt="" />
         </div>

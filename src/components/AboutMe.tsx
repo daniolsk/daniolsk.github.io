@@ -3,10 +3,13 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="mt-5 flex h-full w-full flex-1 flex-col items-center justify-start gap-8 overflow-auto lg:mt-0 lg:justify-center lg:gap-12 lg:px-[10vw]">
-      <div className="animate-fadein relative mx-10 my-4 flex flex-col gap-2 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
-        <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
-        <div className="animate-fadein lg:text-3lg text-lg font-bold animation-delay-[100]">
+    <div className="mt-5 flex h-full w-full flex-1 flex-col items-center !justify-start gap-12 overflow-auto py-10 lg:mt-0 lg:max-h-screen lg:gap-16 lg:px-[10vw]">
+      <div className="animate-fadein relative mx-10 flex flex-col gap-4 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
+        <div className="animate-sliderightdown absolute -left-2 -top-2 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
+        <div className="animate-fadein relative mb-6 h-[270px] w-[270px] self-center transition-all duration-150 ease-out animation-delay-[200] hover:rotate-3 hover:scale-105 2xl:h-[320px] 2xl:w-[320px]">
+          <Image fill alt="" src="/code1.svg"></Image>
+        </div>
+        <div className="animate-fadein text-lg font-bold animation-delay-[100] lg:text-2xl">
           Who am I?
         </div>
         <div className="animate-fadein text-base font-semibold animation-delay-[200] lg:text-lg">
@@ -19,9 +22,12 @@ const AboutMe = () => {
           humans.
         </div>
       </div>
-      <div className="animate-fadein relative mx-10 my-4 flex flex-col gap-2 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
-        <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
-        <div className="animate-fadein lg:text-3lg text-lg font-bold animation-delay-[400]">
+      <div className="animate-fadein relative mx-10 flex flex-col gap-4 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
+        <div className="animate-sliderightdown absolute -left-2 -top-2 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
+        <div className="animate-fadein relative mb-6 h-[270px] w-[340px] self-center transition-all duration-150 ease-out animation-delay-[200] hover:-rotate-3 hover:scale-105 2xl:h-[320px] 2xl:w-[370px]">
+          <Image fill alt="" src="/code2.svg"></Image>
+        </div>
+        <div className="animate-fadein text-lg font-bold animation-delay-[400] lg:text-2xl">
           What do I do?
         </div>
         <div className="animate-fadein text-base font-semibold animation-delay-[500] lg:text-lg">

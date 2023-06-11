@@ -19,14 +19,26 @@ const Contact = () => {
         <div className="animate-fadein text-sm animation-delay-[300] lg:text-base">
           <div className="mb-2 font-bold">ON THE WEB</div>
           <div className="flex flex-col gap-2">
-            <Link className="underline" href="#">
-              Instagram
-            </Link>
-            <Link className="underline" href="#">
+            <Link
+              className="underline"
+              target="_blank"
+              href="https://github.com/daniolsk"
+            >
               GitHub
             </Link>
-            <Link className="underline" href="#">
+            <Link
+              className="underline"
+              target="_blank"
+              href="https://www.linkedin.com/in/daniel-sk/"
+            >
               LinkedIn
+            </Link>
+            <Link
+              className="underline"
+              target="_blank"
+              href="https://www.instagram.com/danielskowron_/"
+            >
+              Instagram
             </Link>
           </div>
         </div>

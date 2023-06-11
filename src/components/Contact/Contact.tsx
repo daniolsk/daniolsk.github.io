@@ -11,7 +11,7 @@ const Contact = () => {
           Let&apos;s create something amazing
         </div>
         <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[250] lg:my-6"></div>
-        <div className="animate-fadein mb-4 font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+        <div className="animate-fadein mb-6 font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
           <div className="mb-2 font-bold">CONTACT</div>
           <div>
             <span className="underline">danielskowron02@gmail.com</span>

@@ -15,7 +15,7 @@ const AboutMe = ({
           Kraków, Poland.
         </div>
         <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[250] lg:my-6"></div>
-        <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+        <div className="animate-fadein mb-4 font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
           As a passionate web developer, I specialize in creating exceptional
           websites by combining my skills in front-end and back-end development.
           Throughout my journey, I have dedicated myself to mastering various

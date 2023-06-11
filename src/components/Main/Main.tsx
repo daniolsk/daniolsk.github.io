@@ -19,7 +19,6 @@ const Main = () => {
     const menu = menuRef.current;
     const section = sectionRef.current;
     const trailer = trailerRef.current;
-    const bgPattern = bgPatternRef.current;
 
     if (!menu || !section) return;
 

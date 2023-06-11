@@ -129,7 +129,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 0 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             About Me
           </button>
@@ -139,7 +139,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 1 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             Projects
           </button>
@@ -149,7 +149,7 @@ const Main = () => {
             }}
             className={`${style.menuElement} ${
               activeTab == 2 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-30 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
+            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
           >
             Contact
           </button>

@@ -1,47 +1,56 @@
 import Image from "next/image";
 import React from "react";
 
-const AboutMe = () => {
+const Projects = ({
+  handleChangeTab,
+}: {
+  handleChangeTab: (id: number) => void;
+}) => {
   return (
-    <div className="mt-5 flex h-full w-full flex-1 flex-col items-center !justify-start gap-12 overflow-auto py-10 lg:mt-0 lg:max-h-screen lg:gap-16 lg:px-[10vw]">
-      <div className="animate-fadein relative mx-10 flex flex-col gap-4 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
-        <div className="animate-sliderightdown absolute -left-2 -top-2 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
-        <div className="animate-fadein relative mb-6 h-[270px] w-[270px] self-center transition-all duration-150 ease-out animation-delay-[200] hover:rotate-3 hover:scale-105 2xl:h-[320px] 2xl:w-[320px]">
-          <Image fill alt="" src="/code1.svg"></Image>
+    <div className=" flex h-full w-full flex-1 flex-col items-center gap-12 overflow-auto px-5 py-8 lg:mt-0 lg:max-h-screen lg:px-[8vw] lg:py-12">
+      <div className="animate-fadein relative m-auto flex-col border-2 border-white bg-slate-900 p-6 text-white shadow-3xl sm:flex md:mx-20 md:p-8 lg:mx-0 lg:p-12">
+        <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 hidden h-full w-full border-2 border-white animation-delay-[700] md:block"></div>
+        <div className="animate-fadein text-3xl font-bold leading-[1.2] tracking-tighter animation-delay-[200] lg:text-5xl">
+          I&apos;m Daniel, <br /> a web developer and designer based in Kraków,
+          Poland.
         </div>
-        <div className="animate-fadein text-lg font-bold animation-delay-[100] lg:text-2xl">
-          Who am I?
+        <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[250] lg:my-6"></div>
+        <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          As a passionate web developer, I specialize in creating exceptional
+          websites by combining my skills in front-end and back-end development.
+          Throughout my journey, I have dedicated myself to mastering various
+          coding languages and staying updated with the latest technologies and
+          trends in web development. Alongside HTML and CSS, I have gained
+          proficiency in React and Next.js, which I frequently utilize in my
+          projects. My commitment lies in delivering top-notch, user-friendly
+          websites for my clients, handling everything from design and
+          development to maintenance, enhancements, and adaptability to evolving
+          market needs.
         </div>
-        <div className="animate-fadein text-base font-semibold animation-delay-[200] lg:text-lg">
-          I&apos;m more than just a developer - I love creating artistic,
-          aesthetically pleasing, modern and cutting-edge designs.
+        <div className="animate-fadein font-medium leading-relaxed animation-delay-[350] lg:text-lg xl:text-xl">
+          In my free time, I enjoy taking on{" "}
+          <button
+            onClick={() => handleChangeTab(1)}
+            className="bigButton inline-block h-[40px] w-[108px] rounded-3xl border-2 border-white px-2 py-1"
+          >
+            personal
+          </button>{" "}
+          projects that allow me to explore my creativity and tackle complex
+          coding challenges, refining my problem-solving abilities and attention
+          to detail.
         </div>
-        <div className="animate-fadein text-sm animation-delay-[300] lg:text-base">
-          I design user interfaces, create graphics, illustrations and put it
-          all into practice, creating functional web applications made for
-          humans.
-        </div>
-      </div>
-      <div className="animate-fadein relative mx-10 flex flex-col gap-4 border-2 border-white bg-slate-900 p-4 text-white shadow-3xl md:mx-20 md:p-8 lg:mx-0 lg:p-12">
-        <div className="animate-sliderightdown absolute -left-2 -top-2 -z-10 h-full w-full border-2 border-white animation-delay-[300]"></div>
-        <div className="animate-fadein relative mb-6 h-[270px] w-[340px] self-center transition-all duration-150 ease-out animation-delay-[200] hover:-rotate-3 hover:scale-105 2xl:h-[320px] 2xl:w-[370px]">
-          <Image fill alt="" src="/code2.svg"></Image>
-        </div>
-        <div className="animate-fadein text-lg font-bold animation-delay-[400] lg:text-2xl">
-          What do I do?
-        </div>
-        <div className="animate-fadein text-base font-semibold animation-delay-[500] lg:text-lg">
-          I create digital symphonies for the eyes - aesthetic compositions with
-          functional notes.
-        </div>
-        <div className="animate-fadein text-sm animation-delay-[600] lg:text-base">
-          I handle the entire software development process - from graphic
-          design, programming and implementation, to maintaining the finished,
-          published product.
+        <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[400] lg:my-6"></div>
+        <div className="animate-fadein flex justify-start animation-delay-[450]">
+          <button
+            onClick={() => handleChangeTab(2)}
+            className="smallButton font-semibold underline"
+          >
+            Get in touch
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default AboutMe;
+export default Projects;

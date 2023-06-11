@@ -11,6 +11,7 @@ const Main = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const mainTitleRef = useRef<HTMLDivElement>(null);
   const trailerRef = useRef<HTMLDivElement>(null);
+  const bgPatternRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<number>(0);
 
@@ -18,6 +19,7 @@ const Main = () => {
     const menu = menuRef.current;
     const section = sectionRef.current;
     const trailer = trailerRef.current;
+    const bgPattern = bgPatternRef.current;
 
     if (!menu || !section) return;
 
@@ -71,12 +73,16 @@ const Main = () => {
     }
   };
 
+  const handleChangeTab = (id: number) => {
+    setActiveTab(id);
+  };
+
   const renderSwitch = (id: number) => {
     switch (id) {
       case 0:
-        return <AboutMe />;
+        return <AboutMe handleChangeTab={handleChangeTab} />;
       case 1:
-        return <Projects />;
+        return <Projects handleChangeTab={handleChangeTab} />;
       case 2:
         return <Contact />;
       default:
@@ -92,12 +98,13 @@ const Main = () => {
     >
       <div
         ref={trailerRef}
-        className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-5 w-5 rounded-full bg-white opacity-0 contrast-100 transition-all duration-700 ease-out`}
+        className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out`}
       ></div>
       <div
         className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img absolute left-0 top-0 -z-30 h-full w-full bg-gradient-to-r from-slate-900 to-sky-900 bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:120%_120%]`}
       ></div>
       <div
+        ref={bgPatternRef}
         className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:4vmin_4vmin]`}
       ></div>
       <div className="flex flex-col items-center lg:items-start">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Projects = ({
@@ -7,46 +8,76 @@ const Projects = ({
   handleChangeTab: (id: number) => void;
 }) => {
   return (
-    <div className=" flex h-full w-full flex-1 flex-col items-center gap-12 overflow-auto px-5 py-8 lg:mt-0 lg:max-h-screen lg:px-[8vw] lg:py-12">
-      <div className="animate-fadein relative m-auto flex-col border-2 border-white bg-slate-900 p-6 text-white shadow-3xl sm:flex md:mx-20 md:p-8 lg:mx-0 lg:p-12">
-        <div className="animate-sliderightdown absolute -left-3 -top-3 -z-10 hidden h-full w-full border-2 border-white animation-delay-[700] md:block"></div>
+    <div className="flex h-full w-full flex-1 flex-col items-center overflow-auto px-5 py-2 pb-4 md:py-8 lg:mt-0 lg:max-h-screen lg:px-[8vw] lg:py-12">
+      <div className="animate-fadein relative m-auto flex-col p-4 text-white sm:flex md:mx-20 md:p-8 lg:mx-0 lg:p-10">
         <div className="animate-fadein text-3xl font-bold leading-[1.2] tracking-tighter animation-delay-[200] lg:text-5xl">
-          I&apos;m Daniel, <br /> a web developer and designer based in Kraków,
-          Poland.
+          #1 &quot;MUSCLER&quot;
         </div>
-        <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[250] lg:my-6"></div>
+        <div className="mb-4 text-2xl">GYM TRACKING APP</div>
+        <div className="mb-8 mt-4 text-2xl">a</div>
+        <div className="animate-fadein mb-4 font-semibold leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          Next.js / React.js / Tailwind CSS / Framer Motion / Prisma /
+          Planetscale MySQL DB / Verce
+        </div>
+        <div className="animate-fadein mb-4 font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          An application that allows tracking fitness progress, recording and
+          planning workout sessions (including sets, repetitions, and weights).
+        </div>
         <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
-          As a passionate web developer, I specialize in creating exceptional
-          websites by combining my skills in front-end and back-end development.
-          Throughout my journey, I have dedicated myself to mastering various
-          coding languages and staying updated with the latest technologies and
-          trends in web development. Alongside HTML and CSS, I have gained
-          proficiency in React and Next.js, which I frequently utilize in my
-          projects. My commitment lies in delivering top-notch, user-friendly
-          websites for my clients, handling everything from design and
-          development to maintenance, enhancements, and adaptability to evolving
-          market needs.
-        </div>
-        <div className="animate-fadein font-medium leading-relaxed animation-delay-[350] lg:text-lg xl:text-xl">
-          In my free time, I enjoy taking on{" "}
-          <button
-            onClick={() => handleChangeTab(1)}
-            className="bigButton inline-block h-[40px] w-[108px] rounded-3xl border-2 border-white px-2 py-1"
+          WEBSITE:{" "}
+          <Link
+            className="underline"
+            target="_blank"
+            href="https://muscler.vercel.app/"
           >
-            personal
-          </button>{" "}
-          projects that allow me to explore my creativity and tackle complex
-          coding challenges, refining my problem-solving abilities and attention
-          to detail.
+            https://muscler.vercel.app/
+          </Link>
         </div>
-        <div className="animate-fadein my-4 h-[1px] w-full bg-white animation-delay-[400] lg:my-6"></div>
-        <div className="animate-fadein flex justify-start animation-delay-[450]">
-          <button
-            onClick={() => handleChangeTab(2)}
-            className="smallButton font-semibold underline"
+        <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          CODE:{" "}
+          <Link
+            className="underline"
+            target="_blank"
+            href="https://github.com/daniolsk/muscler-web-app"
           >
-            Get in touch
-          </button>
+            https://github.com/daniolsk/muscler-web-app
+          </Link>
+        </div>
+      </div>
+      <div className="animate-fadein relative m-auto flex-col p-4 text-white sm:flex md:mx-20 md:p-8 lg:mx-0 lg:p-10">
+        <div className="animate-fadein text-3xl font-bold leading-[1.2] tracking-tighter animation-delay-[200] lg:text-5xl">
+          #2 &quot;GUESS THE SONG&quot;
+        </div>
+        <div className="mb-4 text-2xl">SONG GUESSING WEB GAME</div>
+        <div className="mb-8 mt-4 text-2xl">GIMG</div>
+        <div className="animate-fadein mb-4 font-semibold leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          TypeScript / Next.js / React.js / Tailwind CSS / Spotify API / Genius
+          Lyrics API / Vercel
+        </div>
+        <div className="animate-fadein mb-4 font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          A browser-based game that involves guessing the name of a song or
+          album based on a partial lyric and the artist&apos;s name or a list of
+          songs.
+        </div>
+        <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          WEBSITE:{" "}
+          <Link
+            className="underline"
+            target="_blank"
+            href="https://guessthesong.vercel.app/"
+          >
+            https://guessthesong.vercel.app/
+          </Link>
+        </div>
+        <div className="animate-fadein font-medium leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
+          CODE:{" "}
+          <Link
+            className="underline"
+            target="_blank"
+            href="https://github.com/daniolsk/lyrics-guesser"
+          >
+            https://github.com/daniolsk/lyrics-guesser
+          </Link>
         </div>
       </div>
     </div>

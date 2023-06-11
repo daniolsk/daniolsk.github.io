@@ -31,6 +31,7 @@ const AboutMe = ({
           In my free time, I enjoy taking on{" "}
           <button
             onClick={() => handleChangeTab(1)}
+            data-hover="link-in-text"
             className="bigButton inline-block h-[40px] w-[108px] rounded-3xl border-2 border-white px-2 py-1"
           >
             personal
@@ -44,6 +45,7 @@ const AboutMe = ({
           <button
             onClick={() => handleChangeTab(2)}
             className="smallButton text-lg font-semibold underline"
+            data-hover="get-in-touch"
           >
             Get in touch
           </button>

@@ -18,9 +18,21 @@ const Projects = ({
         </div>
         <div className="mb-4 text-sm lg:text-2xl">GYM TRACKING APP</div>
         <div className="mb-4 flex space-x-4 overflow-x-scroll">
-          <img src="21shots_so.webp" alt="" />
-          <img src="Muscler (1).png" alt="" />
-          <img src="33shots_so.webp" alt="" />
+          <img
+            src="21shots_so.webp"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
+          <img
+            src="Muscler (1).png"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
+          <img
+            src="33shots_so.webp"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
         </div>
         <div className="animate-fadein mb-4 font-semibold leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
           <div className="m-1 inline-block rounded-lg bg-sky-900 px-2 py-1">
@@ -77,10 +89,26 @@ const Projects = ({
         </div>
         <div className="mb-4 text-sm lg:text-2xl">SONG GUESSING WEB GAME</div>
         <div className="mb-4 flex space-x-4 overflow-x-scroll">
-          <img src="767shots_so.png" alt="" />
-          <img src="886shots_so.png" alt="" />
-          <img src="310shots_so.png" alt="" />
-          <img src="552shots_so.png" alt="" />
+          <img
+            src="767shots_so.png"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
+          <img
+            src="886shots_so.png"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
+          <img
+            src="310shots_so.png"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
+          <img
+            src="552shots_so.png"
+            alt=""
+            className="h-auto w-[100%] sm:w-[60vw] md:w-[40vw] xl:w-[30vw]"
+          />
         </div>
         <div className="animate-fadein mb-4 font-semibold leading-relaxed animation-delay-[300] lg:text-lg xl:text-xl">
           <div className="m-1 inline-block rounded-lg bg-sky-900 px-2 py-1">

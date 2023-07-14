@@ -93,7 +93,7 @@ const Main = () => {
               <h1 className="text-4xl font-bold tracking-wider">
                 Daniel Skowron
               </h1>
-              <h3 className="text-lg tracking-wider">
+              <h3 className="text-lg tracking-widest">
                 Web developer and designer.
               </h3>
             </div>
@@ -108,7 +108,7 @@ const Main = () => {
                   }}
                   className={`${style.menuElement} ${
                     activeTab == 0 ? "after:w-[100%]" : ""
-                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
                 >
                   About Me
                 </button>
@@ -118,7 +118,7 @@ const Main = () => {
                   }}
                   className={`${style.menuElement} ${
                     activeTab == 1 ? "after:w-[100%]" : ""
-                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
                 >
                   Projects
                 </button>
@@ -128,7 +128,7 @@ const Main = () => {
                   }}
                   className={`${style.menuElement} ${
                     activeTab == 2 ? "after:w-[100%]" : ""
-                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
                 >
                   Contact
                 </button>
@@ -168,11 +168,11 @@ const Main = () => {
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
             <section ref={aboutMeRef}>
               <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
-              <h1 className="mb-4 text-2xl font-bold">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
                 I&apos;m Daniel, a web developer and designer based in Kraków,
                 Poland.
               </h1>
-              <p className="mb-2 text-justify tracking-wide">
+              <p className="mb-2 text-justify text-base tracking-wide">
                 As a passionate web developer, I specialize in creating
                 exceptional websites by combining my skills in front-end and
                 back-end development. Throughout my journey, I have dedicated
@@ -185,9 +185,12 @@ const Main = () => {
                 to maintenance, enhancements, and adaptability to evolving
                 market needs.
               </p>
-              <p className="text-justify text-sm tracking-wide">
+              <p className="text-justify text-base tracking-wide">
                 In my free time, I enjoy taking on{" "}
                 <button
+                  onClick={() => {
+                    handleNavClick(1);
+                  }}
                   className={`${style.textBtn} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1`}
                 >
                   personal
@@ -197,13 +200,14 @@ const Main = () => {
                 and attention to detail.
               </p>
             </section>
-            <section className="mt-16" ref={projectsRef}>
+            <section className="mt-8 pt-8" ref={projectsRef}>
               <h3 className="mb-4 text-sm text-neutral-300">Projects</h3>
-              <h1 className="mb-4 text-2xl font-bold">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
                 My example personal projects. More on my{" "}
                 <Link
                   className="text-blue-400 hover:underline"
                   href="https://github.com/daniolsk"
+                  target="_blank"
                 >
                   GitHub
                 </Link>
@@ -213,80 +217,88 @@ const Main = () => {
                 <Link
                   href="https://muscler.vercel.app/"
                   target="_blank"
-                  className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-white p-4"
+                  className="group relative flex aspect-[4/3] min-h-[400px] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
                 >
-                  <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/21shots_so.webp')] bg-cover bg-center brightness-[0.3] transition-all ease-out group-hover:scale-105 group-hover:brightness-95"></div>
-                  <h1 className="mb-2 text-xl font-bold">MUSCLER</h1>
-                  <h3 className="mb-2  text-neutral-300">
-                    An application that allows tracking fitness progress,
-                    recording and planning workout sessions (including sets,
-                    repetitions and weights).
-                  </h3>
-                  <div className="flex flex-wrap gap-1">
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Next.js
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      React.js
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Tailwind CSS
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Framer Motion
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Prisma
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Planetscale MySQL DB
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Vercel
+                  <div className="h-full w-full bg-[url('/21shots_so.webp')] bg-cover bg-center brightness-[0.9] transition-all ease-out hover:bg-[length_110%] hover:brightness-100"></div>
+                  <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
+                    <h1 className="mb-2 text-xl font-bold tracking-tighter">
+                      MUSCLER
+                    </h1>
+                    <h3 className="mb-2  text-neutral-300">
+                      An application that allows tracking fitness progress,
+                      recording and planning workout sessions (including sets,
+                      repetitions and weights).
+                    </h3>
+                    <div className="flex flex-wrap gap-1">
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Next.js
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        React.js
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Tailwind CSS
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Framer Motion
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Prisma
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Planetscale MySQL DB
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Vercel
+                      </div>
                     </div>
                   </div>
                 </Link>
                 <Link
                   href="https://guessthesong.vercel.app/"
                   target="_blank"
-                  className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-white p-4"
+                  className="group relative flex aspect-[4/3] min-h-[400px] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
                 >
-                  <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/767shots_so.png')] bg-cover bg-center brightness-[0.3] transition-all ease-out group-hover:scale-105 group-hover:brightness-95"></div>
-                  <h1 className="mb-2 text-xl font-bold">GUESS THE SONG</h1>
-                  <h3 className="mb-2  text-neutral-300">
-                    A browser-based game that involves guessing the name of a
-                    song or album based on a partial lyric and the artist&apos;s
-                    name or a list of songs.
-                  </h3>
-                  <div className="flex flex-wrap gap-1">
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                      TypeScript
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                      Next.js
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      React.js
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Tailwind CSS
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                      Genius Lyrics API
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                      Spotify API
-                    </div>
-                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                      Vercel
+                  <div className="h-full w-full bg-[url('/767shots_so.png')] bg-cover bg-center brightness-[0.9] transition-all ease-out"></div>
+                  <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
+                    <h1 className="mb-2 text-xl font-bold tracking-tighter">
+                      GUESS THE SONG
+                    </h1>
+                    <h3 className="mb-2  text-neutral-300">
+                      A browser-based game that involves guessing the name of a
+                      song or album based on a partial lyric and the
+                      artist&apos;s name or a list of songs.
+                    </h3>
+                    <div className="flex flex-wrap gap-1">
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                        TypeScript
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                        Next.js
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        React.js
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Tailwind CSS
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                        Genius Lyrics API
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                        Spotify API
+                      </div>
+                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                        Vercel
+                      </div>
                     </div>
                   </div>
                 </Link>
               </div>
             </section>
-            <section className="mt-16" ref={contactRef}>
+            <section className="mt-8 pt-8" ref={contactRef}>
               <h3 className="mb-4 text-sm text-neutral-300">Contact</h3>
-              <h1 className="mb-4 text-2xl font-bold">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
                 Let&apos;s create something amazing
               </h1>
               <div className="mb-4">
@@ -294,8 +306,9 @@ const Main = () => {
                 <div>
                   <Link
                     href="mailto: danielskowron02@gmail.com"
-                    className="hover:underline"
+                    className="flex items-center gap-2 hover:underline"
                   >
+                    <AiFillMail />
                     danielskowron02@gmail.com
                   </Link>
                 </div>
@@ -304,24 +317,26 @@ const Main = () => {
                 <div className="mb-2 font-semibold">ON THE WEB</div>
                 <div className="flex flex-col gap-2">
                   <Link
-                    className="hover:underline"
+                    className="flex items-center gap-2 hover:underline"
                     target="_blank"
                     href="https://github.com/daniolsk"
                   >
-                    GitHub
+                    <AiFillGithub /> GitHub
                   </Link>
                   <Link
-                    className="hover:underline"
+                    className="flex items-center gap-2 hover:underline"
                     target="_blank"
                     href="https://www.linkedin.com/in/daniel-sk/"
                   >
+                    <AiFillLinkedin />
                     LinkedIn
                   </Link>
                   <Link
-                    className="hover:underline"
+                    className="flex items-center gap-2 hover:underline"
                     target="_blank"
                     href="https://www.instagram.com/danielskowron_/"
                   >
+                    <AiFillInstagram />
                     Instagram
                   </Link>
                 </div>

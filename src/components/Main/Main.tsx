@@ -50,12 +50,15 @@ const Main = () => {
         fill: "forwards",
       });
     };
+
+    if (!projectsRef.current || !aboutMeRef.current || !contactRef.current)
+      return;
   }, []);
 
   const handleNavClick = (id: number) => {
     switch (id) {
       case 0:
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setActiveTab(0);
         break;
       case 1:
@@ -87,10 +90,10 @@ const Main = () => {
       ></div>
       <div>
         <header className="p-4 md:hidden">DS</header>
-        <div className="m-auto max-w-screen-xl justify-between gap-12 md:flex md:px-6 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="m-auto max-w-screen-xl justify-between gap-8 md:flex md:gap-6 md:px-6 lg:gap-12 lg:px-12 xl:px-16 2xl:px-24">
           <nav className="sticky top-0 hidden h-screen flex-[4] flex-col justify-around p-4 md:flex">
             <div>
-              <h1 className="text-4xl font-bold tracking-wider">
+              <h1 className="text-5xl font-bold tracking-tighter">
                 Daniel Skowron
               </h1>
               <h3 className="text-lg tracking-widest">
@@ -168,7 +171,7 @@ const Main = () => {
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
             <section ref={aboutMeRef}>
               <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
-              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
                 I&apos;m Daniel, a web developer and designer based in Kraków,
                 Poland.
               </h1>
@@ -202,7 +205,7 @@ const Main = () => {
             </section>
             <section className="mt-8 pt-8" ref={projectsRef}>
               <h3 className="mb-4 text-sm text-neutral-300">Projects</h3>
-              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
                 My example personal projects. More on my{" "}
                 <Link
                   className="text-blue-400 hover:underline"
@@ -217,9 +220,9 @@ const Main = () => {
                 <Link
                   href="https://muscler.vercel.app/"
                   target="_blank"
-                  className="group relative flex aspect-[4/3] min-h-[400px] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
+                  className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
                 >
-                  <div className="h-full w-full bg-[url('/21shots_so.webp')] bg-cover bg-center brightness-[0.9] transition-all ease-out hover:bg-[length_110%] hover:brightness-100"></div>
+                  <div className="aspect-video w-full bg-[url('/21shots_so.webp')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
                   <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
                     <h1 className="mb-2 text-xl font-bold tracking-tighter">
                       MUSCLER
@@ -257,9 +260,9 @@ const Main = () => {
                 <Link
                   href="https://guessthesong.vercel.app/"
                   target="_blank"
-                  className="group relative flex aspect-[4/3] min-h-[400px] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
+                  className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
                 >
-                  <div className="h-full w-full bg-[url('/767shots_so.png')] bg-cover bg-center brightness-[0.9] transition-all ease-out"></div>
+                  <div className="aspect-video w-full bg-[url('/767shots_so.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
                   <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
                     <h1 className="mb-2 text-xl font-bold tracking-tighter">
                       GUESS THE SONG
@@ -298,12 +301,12 @@ const Main = () => {
             </section>
             <section className="mt-8 pt-8" ref={contactRef}>
               <h3 className="mb-4 text-sm text-neutral-300">Contact</h3>
-              <h1 className="mb-4 text-2xl font-bold tracking-tighter">
+              <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
                 Let&apos;s create something amazing
               </h1>
               <div className="mb-4">
-                <div className="mb-2 font-semibold">MAIL</div>
-                <div>
+                <div className="mb-2 text-lg font-semibold">MAIL</div>
+                <div className="text-lg">
                   <Link
                     href="mailto: danielskowron02@gmail.com"
                     className="flex items-center gap-2 hover:underline"
@@ -314,8 +317,8 @@ const Main = () => {
                 </div>
               </div>
               <div>
-                <div className="mb-2 font-semibold">ON THE WEB</div>
-                <div className="flex flex-col gap-2">
+                <div className="mb-2 text-lg font-semibold">ON THE WEB</div>
+                <div className="flex flex-col gap-2 text-lg">
                   <Link
                     className="flex items-center gap-2 hover:underline"
                     target="_blank"

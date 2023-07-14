@@ -5,6 +5,8 @@ import {
   AiFillGithub,
   AiFillLinkedin,
   AiFillInstagram,
+  AiOutlineMenu,
+  AiFillCloseCircle,
 } from "react-icons/ai";
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
@@ -21,6 +23,7 @@ const Main = () => {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -115,14 +118,27 @@ const Main = () => {
         className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-[length:4vmin_4vmin] bg-[0%_0%] opacity-60 transition-all duration-700 ease-out`}
       ></div>
       <div>
-        <header className="p-4 md:hidden">DS</header>
+        <header className="sticky top-0 z-50 flex justify-between bg-[#0c1735]/50 p-3 text-xl backdrop-blur-sm md:hidden">
+          <AiOutlineMenu onClick={() => setShowMenu(true)} />
+          <div>DS</div>
+        </header>
         <div className="m-auto max-w-screen-xl justify-between gap-8 md:flex md:gap-6 md:px-6 lg:gap-12 lg:px-12 xl:px-16 2xl:px-24">
-          <nav className="sticky top-0 hidden h-screen flex-[4] flex-col justify-around p-4 md:flex">
+          <nav
+            className={`${
+              showMenu ? "left-0" : "left-[-110vw]"
+            } fixed  top-0 z-50 flex h-screen w-full flex-[4] flex-col justify-between bg-black p-4 transition-all ease-out md:sticky md:justify-around md:bg-transparent`}
+          >
             <div>
-              <h1 className="text-5xl font-bold tracking-tighter">
+              <div
+                onClick={() => setShowMenu(false)}
+                className="mb-4 text-2xl md:hidden"
+              >
+                <AiFillCloseCircle />
+              </div>
+              <h1 className="text-4xl font-bold tracking-tighter md:text-5xl">
                 Daniel Skowron
               </h1>
-              <h3 className="text-lg tracking-[0.22em]">
+              <h3 className="text-base tracking-[0.22em] md:text-lg">
                 Web developer and designer.
               </h3>
             </div>

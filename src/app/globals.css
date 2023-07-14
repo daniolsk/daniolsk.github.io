@@ -70,7 +70,7 @@ body {
     background-size: 2vmin 2vmin;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
     background-size: 4vmin 4vmin;
   }
 }
@@ -81,7 +81,7 @@ body {
     background-size: 4vmin 4vmin;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
     background-size: 6vmin 6vmin;
   }
 }

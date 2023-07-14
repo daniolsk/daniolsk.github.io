@@ -1,17 +1,24 @@
 "use client";
 
+import {
+  AiFillMail,
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillInstagram,
+} from "react-icons/ai";
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
-import AboutMe from "../AboutMe/AboutMe";
-import Projects from "../Projects/Projects";
-import Contact from "../Contact/Contact";
+import Link from "next/link";
 
 const Main = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const mainTitleRef = useRef<HTMLDivElement>(null);
   const trailerRef = useRef<HTMLDivElement>(null);
   const bgPatternRef = useRef<HTMLDivElement>(null);
+
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<number>(0);
 
@@ -45,117 +52,285 @@ const Main = () => {
     };
   }, []);
 
-  const handleScroll = (e: React.WheelEvent<HTMLElement>) => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    if (e.deltaY > 0) {
-      let nextIndex = activeTab;
-
-      if (activeTab == 2) {
-        nextIndex = 0;
-      } else {
-        nextIndex = nextIndex + 1;
-      }
-      section.dataset.activeIndex = nextIndex.toString();
-      setActiveTab(nextIndex);
-    } else {
-      let nextIndex = activeTab;
-
-      if (activeTab == 0) {
-        nextIndex = 2;
-      } else {
-        nextIndex = nextIndex - 1;
-      }
-      section.dataset.activeIndex = nextIndex.toString();
-      setActiveTab(nextIndex);
-    }
-  };
-
-  const handleChangeTab = (id: number) => {
-    setActiveTab(id);
-  };
-
-  const renderSwitch = (id: number) => {
+  const handleNavClick = (id: number) => {
     switch (id) {
       case 0:
-        return <AboutMe handleChangeTab={handleChangeTab} />;
+        window.scrollTo(0, 0);
+        setActiveTab(0);
+        break;
       case 1:
-        return <Projects handleChangeTab={handleChangeTab} />;
+        projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+        setActiveTab(1);
+        break;
       case 2:
-        return <Contact />;
+        contactRef.current?.scrollIntoView({ behavior: "smooth" });
+        setActiveTab(2);
+        break;
+
       default:
-        return "";
+        break;
     }
   };
 
   return (
-    <section
-      ref={sectionRef}
-      // onWheel={(e) => handleScroll(e)}
-      className={`${style.section} relative flex min-h-screen w-full flex-1 flex-col justify-center overflow-hidden lg:flex-row lg:items-center lg:justify-start lg:pl-[5vw]`}
-    >
+    <div ref={sectionRef} className={`${style.section} w-screen`}>
       <div
         ref={trailerRef}
         className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out`}
       ></div>
       <div
-        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img absolute left-0 top-0 -z-30 h-full w-full bg-gradient-to-r from-slate-900 to-sky-900 bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:120%_120%]`}
+        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img fixed left-0 top-0 -z-30 h-full w-full bg-gradient-to-r from-[#0c1735] to-black bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out`}
       ></div>
       <div
         ref={bgPatternRef}
-        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots absolute left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-100 transition-all duration-700 ease-out lg:bg-[length:4vmin_4vmin]`}
+        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-[length:4vmin_4vmin] bg-[0%_0%] opacity-60 transition-all duration-700 ease-out`}
       ></div>
-      <div className="flex flex-col items-center lg:items-start">
-        <div
-          className="my-4 sm:my-8 lg:mb-10 lg:mt-0 xl:mb-16"
-          ref={mainTitleRef}
-        >
-          <div className="animate-fadein whitespace-nowrap text-4xl font-bold tracking-tighter animation-delay-[200] sm:text-4xl lg:text-5xl 2xl:text-6xl">
-            Daniel Skowron
-          </div>
-          <div className="animate-fadein text-center font-normal animation-delay-[300] sm:text-lg lg:text-left lg:text-xl 2xl:text-2xl">
-            Web developer and designer.
-          </div>
-        </div>
-        <div
-          ref={menuRef}
-          className={`${style.menu} group flex w-full flex-row items-center justify-around pb-4 lg:w-auto lg:flex-col lg:items-start lg:justify-center lg:gap-6 xl:gap-8`}
-        >
-          <button
-            onClick={() => {
-              setActiveTab(0);
-            }}
-            className={`${style.menuElement} ${
-              activeTab == 0 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
-          >
-            About Me
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab(1);
-            }}
-            className={`${style.menuElement} ${
-              activeTab == 1 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab(2);
-            }}
-            className={`${style.menuElement} ${
-              activeTab == 2 ? "after:w-[100%]" : ""
-            } animate-slideleft relative cursor-pointer p-2 text-base font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40 sm:text-lg lg:text-xl lg:hover:translate-x-4 lg:hover:translate-y-0 xl:text-3xl`}
-          >
-            Contact
-          </button>
+      <div>
+        <header className="p-4 md:hidden">DS</header>
+        <div className="m-auto max-w-screen-xl justify-between gap-12 md:flex md:px-6 lg:px-12 xl:px-16 2xl:px-24">
+          <nav className="sticky top-0 hidden h-screen flex-[4] flex-col justify-around p-4 md:flex">
+            <div>
+              <h1 className="text-4xl font-bold tracking-wider">
+                Daniel Skowron
+              </h1>
+              <h3 className="text-lg tracking-wider">
+                Web developer and designer.
+              </h3>
+            </div>
+            <div className="flex justify-start">
+              <div
+                ref={menuRef}
+                className={`${style.menu} group flex flex-col items-start gap-4 pb-4`}
+              >
+                <button
+                  onClick={() => {
+                    handleNavClick(0);
+                  }}
+                  className={`${style.menuElement} ${
+                    activeTab == 0 ? "after:w-[100%]" : ""
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                >
+                  About Me
+                </button>
+                <button
+                  onClick={() => {
+                    handleNavClick(1);
+                  }}
+                  className={`${style.menuElement} ${
+                    activeTab == 1 ? "after:w-[100%]" : ""
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                >
+                  Projects
+                </button>
+                <button
+                  onClick={() => {
+                    handleNavClick(2);
+                  }}
+                  className={`${style.menuElement} ${
+                    activeTab == 2 ? "after:w-[100%]" : ""
+                  } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-40`}
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+            <div className="flex gap-4 text-3xl">
+              <Link
+                className="transition-all ease-out hover:scale-125"
+                target="_blank"
+                href="mailto: danielskowron02@gmail.com"
+              >
+                <AiFillMail />
+              </Link>
+              <Link
+                className="transition-all ease-out hover:scale-125"
+                target="_blank"
+                href="https://github.com/daniolsk"
+              >
+                <AiFillGithub />
+              </Link>
+              <Link
+                className="transitiona-ll ease-out hover:scale-125"
+                target="_blank"
+                href="https://www.linkedin.com/in/daniel-sk/"
+              >
+                <AiFillLinkedin />
+              </Link>
+              <Link
+                className="transition-all ease-out hover:scale-125"
+                target="_blank"
+                href="https://www.instagram.com/danielskowron_/"
+              >
+                <AiFillInstagram />
+              </Link>
+            </div>
+          </nav>
+          <main className="flex-[6] p-4 md:py-12 2xl:py-20">
+            <section ref={aboutMeRef}>
+              <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
+              <h1 className="mb-4 text-2xl font-bold">
+                I&apos;m Daniel, a web developer and designer based in Kraków,
+                Poland.
+              </h1>
+              <p className="mb-2 text-justify tracking-wide">
+                As a passionate web developer, I specialize in creating
+                exceptional websites by combining my skills in front-end and
+                back-end development. Throughout my journey, I have dedicated
+                myself to mastering various coding languages and staying updated
+                with the latest technologies and trends in web development.
+                Alongside HTML and CSS, I have gained proficiency in React and
+                Next.js, which I frequently utilize in my projects. My
+                commitment lies in delivering top-notch, user-friendly websites
+                for my clients, handling everything from design and development
+                to maintenance, enhancements, and adaptability to evolving
+                market needs.
+              </p>
+              <p className="text-justify text-sm tracking-wide">
+                In my free time, I enjoy taking on{" "}
+                <button
+                  className={`${style.textBtn} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1`}
+                >
+                  personal
+                </button>{" "}
+                projects that allow me to explore my creativity and tackle
+                complex coding challenges, refining my problem-solving abilities
+                and attention to detail.
+              </p>
+            </section>
+            <section className="mt-16" ref={projectsRef}>
+              <h3 className="mb-4 text-sm text-neutral-300">Projects</h3>
+              <h1 className="mb-4 text-2xl font-bold">
+                My example personal projects. More on my{" "}
+                <Link
+                  className="text-blue-400 hover:underline"
+                  href="https://github.com/daniolsk"
+                >
+                  GitHub
+                </Link>
+                .
+              </h1>
+              <div className="flex flex-col gap-6">
+                <Link
+                  href="https://muscler.vercel.app/"
+                  target="_blank"
+                  className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-white p-4"
+                >
+                  <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/21shots_so.webp')] bg-cover bg-center brightness-[0.3] transition-all ease-out group-hover:scale-105 group-hover:brightness-95"></div>
+                  <h1 className="mb-2 text-xl font-bold">MUSCLER</h1>
+                  <h3 className="mb-2  text-neutral-300">
+                    An application that allows tracking fitness progress,
+                    recording and planning workout sessions (including sets,
+                    repetitions and weights).
+                  </h3>
+                  <div className="flex flex-wrap gap-1">
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Next.js
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      React.js
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Tailwind CSS
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Framer Motion
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Prisma
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Planetscale MySQL DB
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Vercel
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href="https://guessthesong.vercel.app/"
+                  target="_blank"
+                  className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-xl border-[1px] border-white p-4"
+                >
+                  <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/767shots_so.png')] bg-cover bg-center brightness-[0.3] transition-all ease-out group-hover:scale-105 group-hover:brightness-95"></div>
+                  <h1 className="mb-2 text-xl font-bold">GUESS THE SONG</h1>
+                  <h3 className="mb-2  text-neutral-300">
+                    A browser-based game that involves guessing the name of a
+                    song or album based on a partial lyric and the artist&apos;s
+                    name or a list of songs.
+                  </h3>
+                  <div className="flex flex-wrap gap-1">
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                      TypeScript
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                      Next.js
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      React.js
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Tailwind CSS
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                      Genius Lyrics API
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                      Spotify API
+                    </div>
+                    <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
+                      Vercel
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </section>
+            <section className="mt-16" ref={contactRef}>
+              <h3 className="mb-4 text-sm text-neutral-300">Contact</h3>
+              <h1 className="mb-4 text-2xl font-bold">
+                Let&apos;s create something amazing
+              </h1>
+              <div className="mb-4">
+                <div className="mb-2 font-semibold">MAIL</div>
+                <div>
+                  <Link
+                    href="mailto: danielskowron02@gmail.com"
+                    className="hover:underline"
+                  >
+                    danielskowron02@gmail.com
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 font-semibold">ON THE WEB</div>
+                <div className="flex flex-col gap-2">
+                  <Link
+                    className="hover:underline"
+                    target="_blank"
+                    href="https://github.com/daniolsk"
+                  >
+                    GitHub
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/daniel-sk/"
+                  >
+                    LinkedIn
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    target="_blank"
+                    href="https://www.instagram.com/danielskowron_/"
+                  >
+                    Instagram
+                  </Link>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
       </div>
-      {activeTab != null ? renderSwitch(activeTab) : ""}
-    </section>
+    </div>
   );
 };
 

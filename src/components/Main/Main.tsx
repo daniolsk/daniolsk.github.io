@@ -53,6 +53,32 @@ const Main = () => {
 
     if (!projectsRef.current || !aboutMeRef.current || !contactRef.current)
       return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setActiveTab(0);
+        } else {
+          setActiveTab(1);
+        }
+      },
+      { root: null, rootMargin: "0px", threshold: 1 }
+    );
+
+    observer.observe(aboutMeRef.current);
+
+    const observer2 = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setActiveTab(2);
+        } else {
+          setActiveTab(1);
+        }
+      },
+      { root: null, rootMargin: "0px", threshold: 1 }
+    );
+
+    observer2.observe(contactRef.current);
   }, []);
 
   const handleNavClick = (id: number) => {
@@ -96,7 +122,7 @@ const Main = () => {
               <h1 className="text-5xl font-bold tracking-tighter">
                 Daniel Skowron
               </h1>
-              <h3 className="text-lg tracking-widest">
+              <h3 className="text-lg tracking-[0.22em]">
                 Web developer and designer.
               </h3>
             </div>

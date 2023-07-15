@@ -8,9 +8,26 @@ import {
   AiOutlineMenu,
   AiFillCloseCircle,
 } from "react-icons/ai";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiReact,
+  SiMongodb,
+  SiMysql,
+  SiVercel,
+  SiPlanetscale,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiPrisma,
+} from "react-icons/si";
+
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
 import Link from "next/link";
+
+import Projects from "../Projects/Projects";
+import Contact from "../Contact/Contact";
 
 const Main = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -118,9 +135,10 @@ const Main = () => {
         className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
       ></div>
       <div>
-        <header className="sticky top-0 z-10 flex justify-between bg-black/50 p-3 text-xl backdrop-blur-sm md:hidden">
+        <header className="sticky top-0 z-10 flex justify-between border-b-[1px] border-neutral-500 bg-black/60 p-3 text-xl backdrop-blur-sm md:hidden">
           <div>DS</div>
           <AiOutlineMenu
+            className="cursor-pointer text-2xl"
             onClick={() => {
               setShowMenu(true);
               document.querySelector("body")!.style.overflowY = "hidden";
@@ -133,7 +151,7 @@ const Main = () => {
               showMenu ? "left-0" : "left-[-110vw]"
             } fixed  top-0 z-10 flex h-[100dvh] w-full flex-[4] flex-col justify-start bg-black p-4 transition-all ease-out md:sticky md:justify-around md:bg-black/0`}
           >
-            <header className="flex justify-between text-xl md:hidden">
+            <header className="flex cursor-pointer justify-between text-2xl md:hidden">
               <div></div>
               <AiFillCloseCircle
                 onClick={() => {
@@ -142,7 +160,7 @@ const Main = () => {
                 }}
               />
             </header>
-            <div className="flex h-full flex-col justify-around">
+            <div className="flex h-full flex-col justify-between p-3 md:justify-around md:p-0">
               <div>
                 <h1 className="text-4xl font-bold tracking-tighter md:text-5xl">
                   Daniel Skowron
@@ -186,6 +204,44 @@ const Main = () => {
                   >
                     Contact
                   </button>
+                </div>
+              </div>
+              <div>
+                <h3 className="mb-2">I&apos;ve worked with:</h3>
+                <div className="flex flex-wrap gap-[0.8rem]">
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiNextdotjs />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiReact />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiTypescript />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiTailwindcss />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiNodedotjs />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiExpress />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiMysql />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiMongodb />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiPrisma />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiVercel />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiPlanetscale />
+                  </div>
                 </div>
               </div>
               <div className="flex gap-4 text-3xl">
@@ -256,146 +312,10 @@ const Main = () => {
               </p>
             </section>
             <section className="mt-8 pt-8" ref={projectsRef}>
-              <h3 className="mb-4 text-sm text-neutral-300">Projects</h3>
-              <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
-                My example personal projects. More on my{" "}
-                <Link
-                  className="text-blue-400 hover:underline"
-                  href="https://github.com/daniolsk"
-                  target="_blank"
-                >
-                  GitHub
-                </Link>
-                .
-              </h1>
-              <div className="flex flex-col gap-6">
-                <Link
-                  href="https://muscler.vercel.app/"
-                  target="_blank"
-                  className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
-                >
-                  <div className="aspect-video w-full bg-[url('/21shots_so.webp')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
-                  <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
-                    <h1 className="mb-2 text-xl font-bold tracking-tighter">
-                      MUSCLER
-                    </h1>
-                    <h3 className="mb-2  text-neutral-300">
-                      An application that allows tracking fitness progress,
-                      recording and planning workout sessions (including sets,
-                      repetitions and weights).
-                    </h3>
-                    <div className="flex flex-wrap gap-1">
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Next.js
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        React.js
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Tailwind CSS
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Framer Motion
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Prisma
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Planetscale MySQL DB
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Vercel
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-                <Link
-                  href="https://guessthesong.vercel.app/"
-                  target="_blank"
-                  className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
-                >
-                  <div className="aspect-video w-full bg-[url('/767shots_so.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
-                  <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
-                    <h1 className="mb-2 text-xl font-bold tracking-tighter">
-                      GUESS THE SONG
-                    </h1>
-                    <h3 className="mb-2  text-neutral-300">
-                      A browser-based game that involves guessing the name of a
-                      song or album based on a partial lyric and the
-                      artist&apos;s name or a list of songs.
-                    </h3>
-                    <div className="flex flex-wrap gap-1">
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                        TypeScript
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                        Next.js
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        React.js
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Tailwind CSS
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                        Genius Lyrics API
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                        Spotify API
-                      </div>
-                      <div className="flex items-center justify-center rounded-full bg-sky-900 px-2  text-xs">
-                        Vercel
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
+              <Projects />
             </section>
             <section className="mt-8 pt-8" ref={contactRef}>
-              <h3 className="mb-4 text-sm text-neutral-300">Contact</h3>
-              <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
-                Let&apos;s create something amazing
-              </h1>
-              <div className="mb-4">
-                <div className="mb-2 text-lg font-semibold">MAIL</div>
-                <div className="text-lg">
-                  <Link
-                    href="mailto: danielskowron02@gmail.com"
-                    className="flex items-center gap-2 hover:underline"
-                  >
-                    <AiFillMail />
-                    danielskowron02@gmail.com
-                  </Link>
-                </div>
-              </div>
-              <div>
-                <div className="mb-2 text-lg font-semibold">ON THE WEB</div>
-                <div className="flex flex-col gap-2 text-lg">
-                  <Link
-                    className="flex items-center gap-2 hover:underline"
-                    target="_blank"
-                    href="https://github.com/daniolsk"
-                  >
-                    <AiFillGithub /> GitHub
-                  </Link>
-                  <Link
-                    className="flex items-center gap-2 hover:underline"
-                    target="_blank"
-                    href="https://www.linkedin.com/in/daniel-sk/"
-                  >
-                    <AiFillLinkedin />
-                    LinkedIn
-                  </Link>
-                  <Link
-                    className="flex items-center gap-2 hover:underline"
-                    target="_blank"
-                    href="https://www.instagram.com/danielskowron_/"
-                  >
-                    <AiFillInstagram />
-                    Instagram
-                  </Link>
-                </div>
-              </div>
+              <Contact />
             </section>
           </main>
         </div>

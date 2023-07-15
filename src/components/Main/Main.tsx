@@ -260,7 +260,7 @@ const Main = () => {
                   <AiFillGithub />
                 </Link>
                 <Link
-                  className="transitiona-ll ease-out hover:scale-125"
+                  className="transition-all ease-out hover:scale-125"
                   target="_blank"
                   href="https://www.linkedin.com/in/daniel-sk/"
                 >

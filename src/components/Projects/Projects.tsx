@@ -94,6 +94,29 @@ const Projects = () => {
             </div>
           </div>
         </Link>
+        <div className="flex gap-4">
+          <Link
+            href="https://daniolsk.github.io/literalnie/"
+            target="_blank"
+            className="flex-1 overflow-hidden rounded-xl border-[1px] border-neutral-500"
+          >
+            <div className="aspect-square w-full bg-[url('/Literalnie.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out hover:bg-[length:106%] hover:brightness-100"></div>
+          </Link>
+          <Link
+            href="https://daniolsk.github.io/path-finding-algorithm/"
+            target="_blank"
+            className="flex-1 overflow-hidden rounded-xl border-[1px] border-neutral-500"
+          >
+            <div className="aspect-square w-full bg-[url('/Path-finding-algorithm.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out hover:bg-[length:106%] group-hover:brightness-100"></div>
+          </Link>
+          <Link
+            href="https://simplelaunchpad.vercel.app/"
+            target="_blank"
+            className="flex-1 overflow-hidden rounded-xl border-[1px] border-neutral-500"
+          >
+            <div className="aspect-square w-full bg-[url('/Simple-launchpad.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out hover:bg-[length:106%] hover:brightness-100"></div>
+          </Link>
+        </div>
       </div>
     </>
   );

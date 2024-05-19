@@ -38,6 +38,8 @@ import Link from "next/link";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
+import HeroImage from "./HeroComponent";
+
 const Main = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -170,7 +172,7 @@ const Main = () => {
           <nav
             className={`${
               showMenu ? "left-0" : "left-[-110vw]"
-            } fixed  top-0 z-10 flex h-[100dvh] w-full flex-[4] flex-col justify-start bg-black p-4 transition-all ease-out md:sticky md:justify-around md:bg-black/0`}
+            } fixed  top-0 z-10 flex h-[100dvh] w-full flex-[4] flex-col justify-start bg-black p-4 transition-all duration-200 ease-out md:sticky md:justify-around md:bg-black/0`}
           >
             <header className="flex cursor-pointer justify-between text-2xl md:hidden">
               <div></div>
@@ -326,10 +328,11 @@ const Main = () => {
             </div>
           </nav>
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
-            <section className="group -mb-6" ref={meImageRef}>
-              <div
-                className={`${style.hideTrailer} relative aspect-square w-full overflow-hidden rounded-xl bg-[url('/me.jpg')] bg-[length:100%] bg-[0_-100px] transition-all duration-200  ease-out group-hover:bg-[length:106%] xsm:bg-[0_-150px] md:bg-[0_-100px] lg:bg-[0_-150px]`}
-              ></div>
+            <section
+              className={`group -mb-6 ${style.hideTrailer}`}
+              ref={meImageRef}
+            >
+              <HeroImage />
               <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:ml-8 group-hover:after:w-full md:-top-8 lg:text-6xl">
                 Hi, Im Daniel
               </div>

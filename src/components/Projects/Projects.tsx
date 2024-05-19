@@ -19,16 +19,16 @@ const Projects = () => {
         <Link
           href="https://share-screens-fast.vercel.app/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/ssf_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
-          <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
+          <div className="aspect-video w-full bg-[url('/ssf_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Share Screens Fast
             </h1>
             <h3 className="mb-2  text-neutral-300">
-              A fully functioning application in the faaf model (along with a
-              traditional subscription model - payments made using the ftripe
+              A fully functioning application in the SaaS model (along with a
+              traditional subscription model - payments made using the Stripe
               platform). Allows you to quickly transfer photos between devices
               or store them in a cloud.
             </h3>
@@ -66,10 +66,10 @@ const Projects = () => {
         <Link
           href="https://guessthesong.vercel.app/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/gts_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
-          <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
+          <div className="aspect-video w-full bg-[url('/gts_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               GUESS THE SONG
             </h1>
@@ -105,10 +105,10 @@ const Projects = () => {
         <Link
           href="https://muscler.vercel.app/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/msc_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
-          <div className="bg-black p-4 transition-all ease-out group-hover:bg-[#0c0c0c]">
+          <div className="aspect-video w-full bg-[url('/msc_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">MUSCLER</h1>
             <h3 className="mb-2  text-neutral-300">
               An app that allows you to track your performance at the gym,

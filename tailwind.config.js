@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xsm: "500px",
+      },
       boxShadow: {
         "3xl": "5px 5px 30px -1px rgba(0, 0, 0, 0.4)",
       },
@@ -23,6 +26,6 @@ module.exports = {
           };
         },
       });
-    })
+    }),
   ],
 };

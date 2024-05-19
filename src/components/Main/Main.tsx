@@ -31,6 +31,7 @@ import {
   SiSupabase,
 } from "react-icons/si";
 
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
 import Link from "next/link";
@@ -113,7 +114,7 @@ const Main = () => {
   const handleNavClick = (id: number) => {
     switch (id) {
       case 0:
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
         setActiveTab(0);
         break;
       case 1:
@@ -128,6 +129,9 @@ const Main = () => {
       default:
         break;
     }
+
+    setShowMenu(false);
+    document.querySelector("body")!.style.overflowY = "visible";
   };
 
   return (
@@ -145,7 +149,7 @@ const Main = () => {
       ></div>
       <div>
         <header className="sticky top-0 z-10 flex justify-between border-b-[1px] border-neutral-500 bg-black/60 p-3 text-xl backdrop-blur-sm md:hidden">
-          <div>DS</div>
+          <Link href={"/"}>DS</Link>
           <AiOutlineMenu
             className="cursor-pointer text-2xl"
             onClick={() => {
@@ -170,7 +174,14 @@ const Main = () => {
               />
             </header>
             <div className="flex h-full flex-col justify-between p-3 md:justify-around md:p-0">
-              <div>
+              <div
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setShowMenu(false);
+                  document.querySelector("body")!.style.overflowY = "visible";
+                }}
+                className="cursor-pointer"
+              >
                 <h1 className="text-4xl font-bold tracking-tighter md:text-5xl">
                   Daniel Skowron
                 </h1>
@@ -307,13 +318,21 @@ const Main = () => {
             </div>
           </nav>
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
-            <section ref={aboutMeRef}>
+            <section className="group">
+              <div
+                className={`${style.hideTrailer} relative aspect-square w-full overflow-hidden rounded-xl bg-[url('/me.jpg')] bg-[length:100%] bg-[0_-100px] transition-all duration-200  ease-out group-hover:bg-[length:106%] xsm:bg-[0_-150px] md:bg-[0_-100px] lg:bg-[0_-150px]`}
+              ></div>
+              <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:ml-8 group-hover:after:w-full md:-top-8 lg:text-6xl">
+                Hi, Im Daniel
+              </div>
+            </section>
+            <section ref={aboutMeRef} className="pt-8">
               <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
               <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
                 I&apos;m Daniel, a web developer and designer based in Krakow,
                 Poland.
               </h1>
-              <p className="mb-2 text-justify text-base tracking-wide">
+              <p className="mb-2 text-justify text-base tracking-normal">
                 As a passionate web developer, I specialize in creating
                 exceptional websites by combining my skills in front-end and
                 back-end development. Throughout my journey, I have dedicated
@@ -326,7 +345,7 @@ const Main = () => {
                 to maintenance, enhancements, and adaptability to evolving
                 market needs.
               </p>
-              <p className="text-justify text-base tracking-wide">
+              <p className="text-justify text-base tracking-normal">
                 In my free time, I enjoy taking on{" "}
                 <button
                   onClick={() => {

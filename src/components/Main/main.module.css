@@ -53,5 +53,12 @@
       border: none;
       opacity: 0;
     }
+
+    body:has(.hideTrailer:hover) .trailer {
+      width: 0;
+      height: 0;
+      border: none;
+      opacity: 0;
+    }
   }
 }

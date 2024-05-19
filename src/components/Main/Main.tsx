@@ -9,17 +9,26 @@ import {
   AiFillCloseCircle,
 } from "react-icons/ai";
 import {
+  SiGit,
+  SiGithub,
+  SiJavascript,
   SiNextdotjs,
   SiTypescript,
   SiReact,
   SiMongodb,
+  SiPostgresql,
   SiMysql,
   SiVercel,
   SiPlanetscale,
   SiTailwindcss,
   SiNodedotjs,
   SiExpress,
+  SiFigma,
+  SiAdobephotoshop,
   SiPrisma,
+  SiHtml5,
+  SiCss3,
+  SiSupabase,
 } from "react-icons/si";
 
 import { useRef, useEffect, useState } from "react";
@@ -210,13 +219,22 @@ const Main = () => {
                 <h3 className="mb-2">I&apos;ve worked with:</h3>
                 <div className="flex flex-wrap gap-[0.8rem]">
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiNextdotjs />
+                    <SiHtml5 />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiCss3 />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiJavascript />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiTypescript />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
                     <SiReact />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiTypescript />
+                    <SiNextdotjs />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
                     <SiTailwindcss />
@@ -228,13 +246,25 @@ const Main = () => {
                     <SiExpress />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiMysql />
+                    <SiPostgresql />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
                     <SiMongodb />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiMysql />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiGit />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiGithub />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
                     <SiPrisma />
+                  </div>
+                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
+                    <SiSupabase />
                   </div>
                   <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
                     <SiVercel />
@@ -280,7 +310,7 @@ const Main = () => {
             <section ref={aboutMeRef}>
               <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
               <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
-                I&apos;m Daniel, a web developer and designer based in Kraków,
+                I&apos;m Daniel, a web developer and designer based in Krakow,
                 Poland.
               </h1>
               <p className="mb-2 text-justify text-base tracking-wide">

@@ -31,7 +31,6 @@ import {
   SiSupabase,
 } from "react-icons/si";
 
-import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
 import Link from "next/link";
@@ -45,12 +44,17 @@ const Main = () => {
   const trailerRef = useRef<HTMLDivElement>(null);
   const bgPatternRef = useRef<HTMLDivElement>(null);
 
+  const meImageRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<number>(0);
   const [showMenu, setShowMenu] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -81,10 +85,15 @@ const Main = () => {
       });
     };
 
-    if (!projectsRef.current || !aboutMeRef.current || !contactRef.current)
+    if (
+      !meImageRef.current ||
+      !aboutMeRef.current ||
+      !projectsRef.current ||
+      !contactRef.current
+    )
       return;
 
-    const observer = new IntersectionObserver(
+    const observer0 = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setActiveTab(0);
@@ -92,12 +101,12 @@ const Main = () => {
           setActiveTab(1);
         }
       },
-      { root: null, rootMargin: "0px", threshold: 1 }
+      { threshold: 0.1 }
     );
 
-    observer.observe(aboutMeRef.current);
+    observer0.observe(aboutMeRef.current);
 
-    const observer2 = new IntersectionObserver(
+    const observer1 = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setActiveTab(2);
@@ -105,10 +114,10 @@ const Main = () => {
           setActiveTab(1);
         }
       },
-      { root: null, rootMargin: "0px", threshold: 1 }
+      { threshold: 0.1 }
     );
 
-    observer2.observe(contactRef.current);
+    observer1.observe(contactRef.current);
   }, []);
 
   const handleNavClick = (id: number) => {
@@ -318,7 +327,7 @@ const Main = () => {
             </div>
           </nav>
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
-            <section className="group">
+            <section className="group" ref={meImageRef}>
               <div
                 className={`${style.hideTrailer} relative aspect-square w-full overflow-hidden rounded-xl bg-[url('/me.jpg')] bg-[length:100%] bg-[0_-100px] transition-all duration-200  ease-out group-hover:bg-[length:106%] xsm:bg-[0_-150px] md:bg-[0_-100px] lg:bg-[0_-150px]`}
               ></div>

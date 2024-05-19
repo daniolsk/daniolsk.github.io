@@ -157,10 +157,9 @@ const Main = () => {
         className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
       ></div>
       <div>
-        <header className="sticky top-0 z-10 flex justify-between border-b-[1px] border-neutral-500 bg-black/60 p-3 text-xl backdrop-blur-sm md:hidden">
-          <Link href={"/"}>DS</Link>
+        <header className="sticky top-0 z-10 flex w-full justify-end p-2 mix-blend-difference md:hidden">
           <AiOutlineMenu
-            className="cursor-pointer text-2xl"
+            className="h-10 w-10 cursor-pointer p-1 text-2xl"
             onClick={() => {
               setShowMenu(true);
               document.querySelector("body")!.style.overflowY = "hidden";
@@ -327,7 +326,7 @@ const Main = () => {
             </div>
           </nav>
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
-            <section className="group" ref={meImageRef}>
+            <section className="group -mb-6" ref={meImageRef}>
               <div
                 className={`${style.hideTrailer} relative aspect-square w-full overflow-hidden rounded-xl bg-[url('/me.jpg')] bg-[length:100%] bg-[0_-100px] transition-all duration-200  ease-out group-hover:bg-[length:106%] xsm:bg-[0_-150px] md:bg-[0_-100px] lg:bg-[0_-150px]`}
               ></div>
@@ -375,6 +374,9 @@ const Main = () => {
             <section className="mt-8 pt-8" ref={contactRef}>
               <Contact />
             </section>
+            <footer className="mt-8 text-center text-sm">
+              Made with ❤️ by Daniel Skowron
+            </footer>
           </main>
         </div>
       </div>

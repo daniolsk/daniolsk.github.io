@@ -54,11 +54,29 @@
       opacity: 0;
     }
 
-    body:has(.hideTrailer:hover) .trailer {
+    body:has(.heroImage:hover) .trailer {
       width: 0;
       height: 0;
       border: none;
-      opacity: 0;
+      opacity: 1;
+      mix-blend-mode: normal;
+    }
+
+    body:has(.heroImage:hover) .trailer::after {
+      color: white;
     }
   }
+}
+
+.trailer::after {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 200px;
+  height: 100%;
+  content: "Yep, that's me!";
+  font-size: 1.5rem;
+  color: transparent;
+  font-weight: bold;
 }

@@ -149,7 +149,7 @@ const Main = () => {
     <div ref={sectionRef} className={`${style.section} w-screen`}>
       <div
         ref={trailerRef}
-        className={`${style.trailer} pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out`}
+        className={`${style.trailer} after:opacity-1 pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out after:transition-all after:duration-700 after:ease-out`}
       ></div>
       <div
         className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img fixed left-0 top-0 -z-30 h-full w-full bg-gradient-to-br from-[#0c1735] to-black bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out`}
@@ -329,7 +329,7 @@ const Main = () => {
           </nav>
           <main className="flex-[6] p-4 md:py-12 2xl:py-20">
             <section
-              className={`group -mb-6 ${style.hideTrailer}`}
+              className={`group -mb-6 ${style.heroImage}`}
               ref={meImageRef}
             >
               <HeroImage />
@@ -346,15 +346,10 @@ const Main = () => {
               <p className="mb-2 text-justify text-base tracking-normal">
                 As a passionate web developer, I specialize in creating
                 exceptional websites by combining my skills in front-end and
-                back-end development. Throughout my journey, I have dedicated
-                myself to mastering various coding languages and staying updated
-                with the latest technologies and trends in web development.
-                Alongside HTML and CSS, I have gained proficiency in React and
-                Next.js, which I frequently utilize in my projects. My
-                commitment lies in delivering top-notch, user-friendly websites
-                for my clients, handling everything from design and development
-                to maintenance, enhancements, and adaptability to evolving
-                market needs.
+                back-end development. My commitment lies in delivering
+                top-notch, user-friendly websites, handling everything from
+                design and development to maintenance, enhancements, and
+                adaptability to evolving market needs.
               </p>
               <p className="text-justify text-base tracking-normal">
                 In my free time, I enjoy taking on{" "}

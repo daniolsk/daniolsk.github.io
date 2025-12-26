@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # Zaktualizowano z v3 do v4
+        uses: actions/checkout@v4
 
       - name: Detect package manager
         id: detect-package-manager
@@ -51,7 +51,7 @@ jobs:
           fi
 
       - name: Setup Node
-        uses: actions/setup-node@v4  # Zaktualizowano z v3 do v4
+        uses: actions/setup-node@v4
         with:
           node-version: "20" # Zaktualizowano node z 16 (EOL) do 20 (LTS). Jeśli musisz, zmień z powrotem na 16.
           cache: ${{ steps.detect-package-manager.outputs.manager }}
@@ -66,7 +66,7 @@ jobs:
           static_site_generator: next
 
       - name: Restore cache
-        uses: actions/cache@v4  # Zaktualizowano z v3 do v4
+        uses: actions/cache@v4
         with:
           path: |
             .next/cache
@@ -79,14 +79,11 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # Zaktualizowano z v1 do v3 (To naprawia główny błąd)
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
@@ -100,4 +97,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # Zaktualizowano z v2 do v4
+        uses: actions/deploy-pages@v4

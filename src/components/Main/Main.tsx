@@ -23,22 +23,60 @@ import {
   SiTailwindcss,
   SiNodedotjs,
   SiExpress,
-  SiFigma,
-  SiAdobephotoshop,
   SiPrisma,
   SiHtml5,
   SiCss3,
   SiSupabase,
+  SiAngular,
+  SiJira,
+  SiBitbucket,
+  SiSlack,
 } from "react-icons/si";
 
 import { useRef, useEffect, useState } from "react";
 import style from "./main.module.css";
 import Link from "next/link";
-
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
-
 import HeroImage from "./HeroComponent";
+
+const technologiesStack = [
+  // Front-end
+  { icon: SiHtml5, name: "HTML5" },
+  { icon: SiCss3, name: "CSS3" },
+  { icon: SiJavascript, name: "JavaScript" },
+  { icon: SiTypescript, name: "TypeScript" },
+  { icon: SiReact, name: "React" },
+  { icon: SiNextdotjs, name: "Next.js" },
+  { icon: SiAngular, name: "Angular" },
+  { icon: SiTailwindcss, name: "Tailwind CSS" },
+  
+  // Back-end
+  { icon: SiNodedotjs, name: "Node.js" },
+  { icon: SiExpress, name: "Express" },
+  { icon: SiPrisma, name: "Prisma" },
+  
+  // DBs
+  { icon: SiPostgresql, name: "PostgreSQL" },
+  { icon: SiMongodb, name: "MongoDB" },
+  { icon: SiMysql, name: "MySQL" },
+];
+
+const toolsStack = [
+  // Version control
+  { icon: SiGit, name: "Git" },
+  { icon: SiGithub, name: "GitHub" },
+  { icon: SiBitbucket, name: "Bitbucket" },
+  
+  // Hosting / BaaS / DBaaS
+  { icon: SiVercel, name: "Vercel" },
+  { icon: SiSupabase, name: "Supabase" },
+  { icon: SiPlanetscale, name: "PlanetScale" },
+  
+  // Team collaboration
+  { icon: SiJira, name: "Jira" },
+  { icon: SiSlack, name: "Slack" },
+];
 
 const Main = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -54,9 +92,7 @@ const Main = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(activeTab);
-  }, [activeTab]);
+  const techTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -73,12 +109,12 @@ const Main = () => {
 
     if (!trailer) return;
 
-    window.onmousemove = (e) => {
-      const x = e.clientX - trailer.offsetWidth / 2;
-      const y = e.clientY - trailer.offsetHeight / 2;
+   window.onmousemove = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
 
       const keyframes = {
-        transform: `translate(${x}px, ${y}px)`,
+        transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
       };
 
       trailer.animate(keyframes, {
@@ -205,9 +241,7 @@ const Main = () => {
                   className={`${style.menu} group flex flex-col items-start gap-4 pb-4`}
                 >
                   <button
-                    onClick={() => {
-                      handleNavClick(0);
-                    }}
+                    onClick={() => handleNavClick(0)}
                     className={`${style.menuElement} ${
                       activeTab == 0 ? "after:w-[100%]" : ""
                     } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
@@ -215,9 +249,7 @@ const Main = () => {
                     About Me
                   </button>
                   <button
-                    onClick={() => {
-                      handleNavClick(1);
-                    }}
+                    onClick={() => handleNavClick(1)}
                     className={`${style.menuElement} ${
                       activeTab == 1 ? "after:w-[100%]" : ""
                     } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
@@ -225,9 +257,7 @@ const Main = () => {
                     Projects
                   </button>
                   <button
-                    onClick={() => {
-                      handleNavClick(2);
-                    }}
+                    onClick={() => handleNavClick(2)}
                     className={`${style.menuElement} ${
                       activeTab == 2 ? "after:w-[100%]" : ""
                     } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
@@ -238,92 +268,87 @@ const Main = () => {
               </div>
               <div>
                 <h3 className="mb-2">I&apos;ve worked with:</h3>
+                <div className="flex flex-wrap gap-[0.8rem] mb-[1.6rem]">
+                  {technologiesStack.map((tech, i) => (
+                  <div
+                    key={i}
+                    className={`${style.techIcon} rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                    onMouseEnter={() => {
+                      if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
+                      
+                      if (trailerRef.current) {
+                        trailerRef.current.setAttribute("data-tech", tech.name);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      techTimeoutRef.current = setTimeout(() => {
+                        if (trailerRef.current) {
+                          trailerRef.current.removeAttribute("data-tech");
+                        }
+                      }, 300);
+                    }}
+                  >
+                    <tech.icon />
+                  </div>
+                  ))}
+                </div>
                 <div className="flex flex-wrap gap-[0.8rem]">
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiHtml5 />
+                   {toolsStack.map((tech, i) => (
+                  <div
+                    key={i}
+                    className={`${style.techIcon} rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                    onMouseEnter={() => {
+                      if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
+                      
+                      if (trailerRef.current) {
+                        trailerRef.current.setAttribute("data-tech", tech.name);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      techTimeoutRef.current = setTimeout(() => {
+                        if (trailerRef.current) {
+                          trailerRef.current.removeAttribute("data-tech");
+                        }
+                      }, 300);
+                    }}
+                  >
+                    <tech.icon />
                   </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiCss3 />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiJavascript />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiTypescript />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiReact />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiNextdotjs />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiTailwindcss />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiNodedotjs />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiExpress />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiPostgresql />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiMongodb />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiMysql />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiGit />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiGithub />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiPrisma />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiSupabase />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiVercel />
-                  </div>
-                  <div className="rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110">
-                    <SiPlanetscale />
-                  </div>
+                  ))}
                 </div>
               </div>
-              <div className="flex gap-4 text-3xl">
-                <Link
-                  className="transition-all ease-out hover:scale-125"
-                  target="_blank"
-                  href="mailto: danielskowron02@gmail.com"
-                >
-                  <AiFillMail />
-                </Link>
-                <Link
-                  className="transition-all ease-out hover:scale-125"
-                  target="_blank"
-                  href="https://github.com/daniolsk"
-                >
-                  <AiFillGithub />
-                </Link>
-                <Link
-                  className="transition-all ease-out hover:scale-125"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/daniel-sk/"
-                >
-                  <AiFillLinkedin />
-                </Link>
-                <Link
-                  className="transition-all ease-out hover:scale-125"
-                  target="_blank"
-                  href="https://www.instagram.com/danielskowron_/"
-                >
-                  <AiFillInstagram />
-                </Link>
+              <div>
+                <h3 className="mb-2">Find me on:</h3>
+                <div className="flex gap-4 text-3xl">
+                  <Link
+                    className="transition-all ease-out hover:scale-125"
+                    target="_blank"
+                    href="mailto: danielskowron02@gmail.com"
+                  >
+                    <AiFillMail />
+                  </Link>
+                  <Link
+                    className="transition-all ease-out hover:scale-125"
+                    target="_blank"
+                    href="https://github.com/daniolsk"
+                  >
+                    <AiFillGithub />
+                  </Link>
+                  <Link
+                    className="transition-all ease-out hover:scale-125"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/daniel-sk/"
+                  >
+                    <AiFillLinkedin />
+                  </Link>
+                  <Link
+                    className="transition-all ease-out hover:scale-125"
+                    target="_blank"
+                    href="https://www.instagram.com/danielskowron_/"
+                  >
+                    <AiFillInstagram />
+                  </Link>
+                </div>
               </div>
             </div>
           </nav>
@@ -340,24 +365,18 @@ const Main = () => {
             <section ref={aboutMeRef} className="pt-8">
               <h3 className="mb-4 text-sm text-neutral-300">About me</h3>
               <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
-                I&apos;m Daniel, a web developer and designer based in Krakow,
-                Poland.
+                I&apos;m Daniel, a web developer based in Krakow, Poland.
               </h1>
               <p className="mb-2 text-justify text-base tracking-normal">
                 As a passionate web developer, I specialize in creating
-                exceptional websites by combining my skills in front-end and
-                back-end development. My commitment lies in delivering
-                top-notch, user-friendly websites, handling everything from
-                design and development to maintenance, enhancements, and
-                adaptability to evolving market needs.
+                exceptional web applications by combining my skills in front-end
+                and back-end development.
               </p>
               <p className="text-justify text-base tracking-normal">
                 In my free time, I enjoy taking on{" "}
                 <button
-                  onClick={() => {
-                    handleNavClick(1);
-                  }}
-                  className={`${style.textBtn} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1`}
+                  onClick={() => handleNavClick(1)}
+                  className={`${style.textBtn} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1 cursor-pointer`}
                 >
                   personal
                 </button>{" "}

@@ -65,18 +65,41 @@
     body:has(.heroImage:hover) .trailer::after {
       color: white;
     }
-  }
-}
 
-.trailer::after {
-  display: block;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 200px;
-  height: 100%;
-  content: "Yep, that's me!";
-  font-size: 1.5rem;
-  color: transparent;
-  font-weight: bold;
+    .trailer[data-tech] {
+      width: 0;
+      height: 0;
+      border: none;
+      opacity: 1;
+      mix-blend-mode: normal;
+    }
+
+    .trailer[data-tech]::after {
+      content: attr(data-tech);
+      position: absolute;
+      top: auto;
+      
+      bottom: 100%;
+      margin-bottom: 15px;
+      left: 50%;
+      
+      background-color: white;
+      color: black;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      width: max-content;
+      height: auto;
+      
+      opacity: 0;
+      transform: translate(-50%, 10px) scale(0.8);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    body:has(.techIcon:hover) .trailer[data-tech]::after {
+      opacity: 1;
+      transform: translate(-50%, 0px) scale(1);
+    }
+  }
 }

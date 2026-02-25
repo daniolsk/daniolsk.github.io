@@ -17,7 +17,7 @@ const Projects = () => {
       </h1>
       <div className="flex flex-col gap-6">
          <Link
-          href="https://color-palette-generator-daniel-sk.vercel.app/"
+          href="https://color-palette-generator.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
@@ -46,7 +46,7 @@ const Projects = () => {
           </div>
         </Link>
         <Link
-          href="https://share-screens-fast.vercel.app/"
+          href="https://share-screens-fast.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
@@ -93,7 +93,7 @@ const Projects = () => {
           </div>
         </Link>
         <Link
-          href="https://guessthesong.vercel.app/"
+          href="https://guessthesong.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
@@ -132,7 +132,7 @@ const Projects = () => {
           </div>
         </Link>
         <Link
-          href="https://muscler.vercel.app/"
+          href="https://muscler.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >

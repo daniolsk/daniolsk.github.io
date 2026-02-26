@@ -37,14 +37,24 @@
       opacity: 1;
     }
 
-    body:has(.menuElement:hover) .trailer {
-      width: 130px;
-      height: 40px;
+    body:has(.descriptionLink:hover) .trailer {
+      width: 87px;
+      height: 29px;
     }
 
-    body:has(.textBtn:hover) .trailer {
-      width: 80px;
-      height: 30px;
+    :global(body:has(#aboutMeButton:hover)) .trailer {
+      width: 115px;
+      height: 44px;
+    }
+
+    :global(body:has(#projectsButton:hover)) .trailer {
+      width: 98px;
+      height: 44px;
+    }
+
+    :global(body:has(#contactButton:hover)) .trailer {
+      width: 95px;
+      height: 44px;
     }
 
     body:has(a:hover) .trailer {

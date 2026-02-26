@@ -188,11 +188,11 @@ const Main = () => {
         className={`${style.trailer} after:opacity-1 pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out after:transition-all after:duration-700 after:ease-out`}
       ></div>
       <div
-        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img fixed left-0 top-0 -z-30 h-full w-full bg-gradient-to-br from-[#0c1735] to-black bg-[length:120%_120%] bg-[center_40%] opacity-100 transition-all duration-700 ease-out`}
+        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img fixed left-0 top-0 -z-30 h-full w-full bg-linear-to-br from-[#0c1735] to-black bg-size-[120%_120%] bg-position-[center_40%] opacity-100 transition-all duration-700 ease-out`}
       ></div>
       <div
         ref={bgPatternRef}
-        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-[length:6vmin_6vmin] bg-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-[length:4vmin_4vmin]`}
+        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-size-[6vmin_6vmin] bg-position-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-size-[4vmin_4vmin]`}
       ></div>
       <div>
         <header className="sticky top-0 z-10 flex w-full justify-end p-2 mix-blend-difference md:hidden">
@@ -204,11 +204,11 @@ const Main = () => {
             }}
           />
         </header>
-        <div className="m-auto max-w-screen-xl justify-between gap-8 md:flex md:gap-6 md:px-6 lg:gap-12 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="m-auto max-w-7xl justify-between gap-8 md:flex md:gap-6 md:px-6 lg:gap-12 lg:px-12 xl:px-16 2xl:px-24">
           <nav
             className={`${
               showMenu ? "left-0" : "left-[-110vw]"
-            } fixed  top-0 z-10 flex h-[100dvh] w-full flex-[4] flex-col justify-start bg-black p-4 transition-all duration-200 ease-out md:sticky md:justify-around md:bg-black/0`}
+            } fixed  top-0 z-10 flex h-dvh w-full flex-4 flex-col justify-start bg-black p-4 transition-all duration-200 ease-out md:sticky md:justify-around md:bg-black/0`}
           >
             <header className="flex cursor-pointer justify-between text-2xl md:hidden">
               <div></div>
@@ -242,25 +242,28 @@ const Main = () => {
                 >
                   <button
                     onClick={() => handleNavClick(0)}
+                    id='aboutMeButton'
                     className={`${style.menuElement} ${
-                      activeTab == 0 ? "after:w-[100%]" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
+                      activeTab == 0 ? "after:w-full" : ""
+                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
                   >
                     About Me
                   </button>
                   <button
                     onClick={() => handleNavClick(1)}
+                    id={'projectsButton'}
                     className={`${style.menuElement} ${
-                      activeTab == 1 ? "after:w-[100%]" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
+                      activeTab == 1 ? "after:w-full" : ""
+                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
                   >
                     Projects
                   </button>
                   <button
                     onClick={() => handleNavClick(2)}
+                    id={'contactButton'}
                     className={`${style.menuElement} ${
-                      activeTab == 2 ? "after:w-[100%]" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:!opacity-100 hover:after:w-[100%] group-hover:opacity-60`}
+                      activeTab == 2 ? "after:w-full" : ""
+                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
                   >
                     Contact
                   </button>
@@ -272,7 +275,7 @@ const Main = () => {
                   {technologiesStack.map((tech, i) => (
                   <div
                     key={i}
-                    className={`${style.techIcon} rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                    className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
                     onMouseEnter={() => {
                       if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
                       
@@ -296,7 +299,7 @@ const Main = () => {
                    {toolsStack.map((tech, i) => (
                   <div
                     key={i}
-                    className={`${style.techIcon} rounded-md border-[1px] border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                    className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
                     onMouseEnter={() => {
                       if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
                       
@@ -352,13 +355,13 @@ const Main = () => {
               </div>
             </div>
           </nav>
-          <main className="flex-[6] p-4 md:py-12 2xl:py-20">
+          <main className="flex-6 p-4 md:py-12 2xl:py-20">
             <section
               className={`group -mb-6 ${style.heroImage}`}
               ref={meImageRef}
             >
               <HeroImage />
-              <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:ml-8 group-hover:after:w-full md:-top-8 lg:text-6xl">
+              <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:ml-8 group-hover:after:w-full md:-top-8 lg:text-6xl">
                 Hi, Im Daniel
               </div>
             </section>
@@ -367,19 +370,19 @@ const Main = () => {
               <h1 className="mb-4 text-2xl font-bold tracking-tighter lg:text-3xl">
                 I&apos;m Daniel, a web developer based in Krakow, Poland.
               </h1>
-              <p className="mb-2 text-justify text-base tracking-normal">
+              <p className="mb-2 text-justify text-base/7 tracking-normal">
                 As a passionate web developer, I specialize in creating
                 exceptional web applications by combining my skills in front-end
                 and back-end development.
               </p>
-              <p className="text-justify text-base tracking-normal">
+              <p className="text-justify text-base/7 tracking-normal">
                 In my free time, I enjoy taking on{" "}
-                <button
+                <span
                   onClick={() => handleNavClick(1)}
-                  className={`${style.textBtn} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1 cursor-pointer`}
+                  className={`${style.descriptionLink} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1 cursor-pointer`}
                 >
                   personal
-                </button>{" "}
+                </span>{" "}
                 projects that allow me to explore my creativity and tackle
                 complex coding challenges, refining my problem-solving abilities
                 and attention to detail.

@@ -18,11 +18,11 @@ const Contact = () => {
         <div className="mb-2 text-lg font-semibold">MAIL</div>
         <div className="text-lg">
           <Link
-            href="mailto: danielskowron02@gmail.com"
+            href="mailto: contact@danielskowron.com"
             className="flex items-center gap-2 hover:underline"
           >
             <AiFillMail />
-            danielskowron02@gmail.com
+            contact@danielskowron.com
           </Link>
         </div>
       </div>

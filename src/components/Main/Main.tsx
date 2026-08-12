@@ -326,7 +326,7 @@ const Main = () => {
                   <Link
                     className="transition-all ease-out hover:scale-125"
                     target="_blank"
-                    href="mailto: danielskowron02@gmail.com"
+                    href="mailto: contact@danielskowron.com"
                   >
                     <AiFillMail />
                   </Link>

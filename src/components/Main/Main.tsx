@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import {
   AiFillMail,
   AiFillGithub,
@@ -50,12 +51,12 @@ const technologiesStack = [
   { icon: SiNextdotjs, name: "Next.js" },
   { icon: SiAngular, name: "Angular" },
   { icon: SiTailwindcss, name: "Tailwind CSS" },
-  
+
   // Back-end
   { icon: SiNodedotjs, name: "Node.js" },
   { icon: SiExpress, name: "Express" },
   { icon: SiPrisma, name: "Prisma" },
-  
+
   // DBs
   { icon: SiPostgresql, name: "PostgreSQL" },
   { icon: SiMongodb, name: "MongoDB" },
@@ -67,12 +68,12 @@ const toolsStack = [
   { icon: SiGit, name: "Git" },
   { icon: SiGithub, name: "GitHub" },
   { icon: SiBitbucket, name: "Bitbucket" },
-  
+
   // Hosting / BaaS / DBaaS
   { icon: SiVercel, name: "Vercel" },
   { icon: SiSupabase, name: "Supabase" },
   { icon: SiPlanetscale, name: "PlanetScale" },
-  
+
   // Team collaboration
   { icon: SiJira, name: "Jira" },
   { icon: SiSlack, name: "Slack" },
@@ -109,7 +110,7 @@ const Main = () => {
 
     if (!trailer) return;
 
-   window.onmousemove = (e) => {
+    window.onmousemove = (e) => {
       const x = e.clientX;
       const y = e.clientY;
 
@@ -139,7 +140,7 @@ const Main = () => {
           setActiveTab(1);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer0.observe(aboutMeRef.current);
@@ -152,7 +153,7 @@ const Main = () => {
           setActiveTab(1);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer1.observe(contactRef.current);
@@ -185,15 +186,19 @@ const Main = () => {
     <div ref={sectionRef} className={`${style.section} w-screen`}>
       <div
         ref={trailerRef}
-        className={`${style.trailer} after:opacity-1 pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out after:transition-all after:duration-700 after:ease-out`}
+        className={`${style.trailer} pointer-events-none fixed top-0 left-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out after:opacity-1 after:transition-all after:duration-700 after:ease-out`}
       ></div>
-      <div
-        className={`${style.bgImage} animate-slideleft-bg-img-mobile lg:animate-slideleft-bg-img fixed left-0 top-0 -z-30 h-full w-full bg-linear-to-br from-[#0c1735] to-black bg-size-[120%_120%] bg-position-[center_40%] opacity-100 transition-all duration-700 ease-out`}
-      ></div>
-      <div
+      <motion.div
+        initial={{ x: -30, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        className={`${style.bgImage} fixed top-0 left-0 -z-30 h-full w-full bg-linear-to-br from-[#0c1735] to-black bg-size-[120%_120%] bg-position-[center_40%] opacity-100 transition-all duration-700 ease-out`}
+      ></motion.div>
+      <motion.div
+        initial={{ x: -30, opacity: 0 }}
+        animate={{ x: 0, opacity: 0.6 }}
         ref={bgPatternRef}
-        className={`${style.bgPattern} animate-slideleft-bg-mobile lg:animate-slideleft-bg bg-dots fixed left-0 top-0 -z-20 h-full w-full bg-size-[6vmin_6vmin] bg-position-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-size-[4vmin_4vmin]`}
-      ></div>
+        className={`${style.bgPattern} bg-dots fixed top-0 left-0 -z-20 h-full w-full bg-size-[6vmin_6vmin] bg-position-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-size-[4vmin_4vmin]`}
+      ></motion.div>
       <div>
         <header className="sticky top-0 z-10 flex w-full justify-end p-2 mix-blend-difference md:hidden">
           <AiOutlineMenu
@@ -208,7 +213,7 @@ const Main = () => {
           <nav
             className={`${
               showMenu ? "left-0" : "left-[-110vw]"
-            } fixed  top-0 z-10 flex h-dvh w-full flex-4 flex-col justify-start bg-black p-4 transition-all duration-200 ease-out md:sticky md:justify-around md:bg-black/0`}
+            } fixed top-0 z-10 flex h-dvh w-full flex-4 flex-col justify-start bg-black p-4 transition-all duration-200 ease-out md:sticky md:justify-around md:bg-black/0`}
           >
             <header className="flex cursor-pointer justify-between text-2xl md:hidden">
               <div></div>
@@ -238,32 +243,32 @@ const Main = () => {
               <div className="flex justify-start">
                 <div
                   ref={menuRef}
-                  className={`${style.menu} group flex flex-col items-start gap-4 pb-4`}
+                  className={`${style.menu} group flex flex-col items-start gap-4`}
                 >
                   <button
                     onClick={() => handleNavClick(0)}
-                    id='aboutMeButton'
+                    id="aboutMeButton"
                     className={`${style.menuElement} ${
                       activeTab == 0 ? "after:w-full" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[500] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
+                    } animation-delay-[500] relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out group-hover:opacity-60 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full`}
                   >
                     About Me
                   </button>
                   <button
                     onClick={() => handleNavClick(1)}
-                    id={'projectsButton'}
+                    id={"projectsButton"}
                     className={`${style.menuElement} ${
                       activeTab == 1 ? "after:w-full" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[600] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
+                    } animation-delay-[600] relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out group-hover:opacity-60 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full`}
                   >
                     Projects
                   </button>
                   <button
                     onClick={() => handleNavClick(2)}
-                    id={'contactButton'}
+                    id={"contactButton"}
                     className={`${style.menuElement} ${
                       activeTab == 2 ? "after:w-full" : ""
-                    } animate-slideleft relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out animation-delay-[700] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full group-hover:opacity-60`}
+                    } animation-delay-[700] relative cursor-pointer p-2 text-xl font-medium transition-all duration-300 ease-out group-hover:opacity-60 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] hover:translate-x-4 hover:translate-y-0 hover:opacity-100! hover:after:w-full`}
                   >
                     Contact
                   </button>
@@ -271,52 +276,60 @@ const Main = () => {
               </div>
               <div>
                 <h3 className="mb-2">I&apos;ve worked with:</h3>
-                <div className="flex flex-wrap gap-[0.8rem] mb-[1.6rem]">
+                <div className="mb-[1.6rem] flex flex-wrap gap-[0.8rem]">
                   {technologiesStack.map((tech, i) => (
-                  <div
-                    key={i}
-                    className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
-                    onMouseEnter={() => {
-                      if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
-                      
-                      if (trailerRef.current) {
-                        trailerRef.current.setAttribute("data-tech", tech.name);
-                      }
-                    }}
-                    onMouseLeave={() => {
-                      techTimeoutRef.current = setTimeout(() => {
+                    <div
+                      key={i}
+                      className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                      onMouseEnter={() => {
+                        if (techTimeoutRef.current)
+                          clearTimeout(techTimeoutRef.current);
+
                         if (trailerRef.current) {
-                          trailerRef.current.removeAttribute("data-tech");
+                          trailerRef.current.setAttribute(
+                            "data-tech",
+                            tech.name,
+                          );
                         }
-                      }, 300);
-                    }}
-                  >
-                    <tech.icon />
-                  </div>
+                      }}
+                      onMouseLeave={() => {
+                        techTimeoutRef.current = setTimeout(() => {
+                          if (trailerRef.current) {
+                            trailerRef.current.removeAttribute("data-tech");
+                          }
+                        }, 300);
+                      }}
+                    >
+                      <tech.icon />
+                    </div>
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-[0.8rem]">
-                   {toolsStack.map((tech, i) => (
-                  <div
-                    key={i}
-                    className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
-                    onMouseEnter={() => {
-                      if (techTimeoutRef.current) clearTimeout(techTimeoutRef.current);
-                      
-                      if (trailerRef.current) {
-                        trailerRef.current.setAttribute("data-tech", tech.name);
-                      }
-                    }}
-                    onMouseLeave={() => {
-                      techTimeoutRef.current = setTimeout(() => {
+                  {toolsStack.map((tech, i) => (
+                    <div
+                      key={i}
+                      className={`${style.techIcon} rounded-md border border-neutral-500 p-2 text-xl transition-all ease-out hover:scale-110`}
+                      onMouseEnter={() => {
+                        if (techTimeoutRef.current)
+                          clearTimeout(techTimeoutRef.current);
+
                         if (trailerRef.current) {
-                          trailerRef.current.removeAttribute("data-tech");
+                          trailerRef.current.setAttribute(
+                            "data-tech",
+                            tech.name,
+                          );
                         }
-                      }, 300);
-                    }}
-                  >
-                    <tech.icon />
-                  </div>
+                      }}
+                      onMouseLeave={() => {
+                        techTimeoutRef.current = setTimeout(() => {
+                          if (trailerRef.current) {
+                            trailerRef.current.removeAttribute("data-tech");
+                          }
+                        }, 300);
+                      }}
+                    >
+                      <tech.icon />
+                    </div>
                   ))}
                 </div>
               </div>
@@ -361,7 +374,7 @@ const Main = () => {
               ref={meImageRef}
             >
               <HeroImage />
-              <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:ml-8 group-hover:after:w-full md:-top-8 lg:text-6xl">
+              <div className="relative -top-6 ml-2 inline-block text-5xl font-bold tracking-tighter transition-all duration-200 ease-out group-hover:ml-8 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[0%] after:bg-white after:transition-all after:duration-300 after:ease-out after:content-[''] group-hover:after:w-full md:-top-8 lg:text-6xl">
                 Hi, Im Daniel
               </div>
             </section>
@@ -379,7 +392,7 @@ const Main = () => {
                 In my free time, I enjoy taking on{" "}
                 <span
                   onClick={() => handleNavClick(1)}
-                  className={`${style.descriptionLink} text-xs-2 whitespace-nowrap rounded-full border border-white px-2 py-1 cursor-pointer`}
+                  className={`${style.descriptionLink} text-xs-2 cursor-pointer rounded-full border border-white px-2 py-1 whitespace-nowrap`}
                 >
                   personal
                 </span>{" "}

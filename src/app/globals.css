@@ -15,28 +15,8 @@
     animation: fadeIn 0.3s ease-out;
     animation-fill-mode: backwards;
   }
-  .animate-slideleft {
-    animation: slideLeft 0.3s ease-out;
-    animation-fill-mode: backwards;
-  }
-  .animate-sliderightdown {
-    animation: slideRightDown 0.3s ease-out;
-    animation-fill-mode: backwards;
-  }
   .animate-slideleft-bg {
     animation: slideLeftBg 0.5s ease-out;
-    animation-fill-mode: backwards;
-  }
-  .animate-slideleft-bg-mobile {
-    animation: slideLeftBgMobile 1s ease-out;
-    animation-fill-mode: backwards;
-  }
-  .animate-slideleft-bg-img {
-    animation: slideLeftBgImg 1s ease-out;
-    animation-fill-mode: backwards;
-  }
-  .animate-slideleft-bg-img-mobile {
-    animation: slideLeftBgImgMobile 1s ease-out;
     animation-fill-mode: backwards;
   }
 }

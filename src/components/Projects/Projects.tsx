@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import cpgImage from "@/assets/cpg.webp";
+import ssfImage from "@/assets/ssf_1.webp";
+import gtsImage from "@/assets/gts_1.webp";
+import mscImage from "@/assets/msc_1.webp";
 
 const Projects = () => {
   return (
@@ -24,10 +28,8 @@ const Projects = () => {
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
-              src="/cpg.webp"
+              src={cpgImage}
               alt="Color Palette Generator screenshot"
-              width={1400}
-              height={1050}
               className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
@@ -61,10 +63,8 @@ const Projects = () => {
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
-              src="/ssf_1.webp"
+              src={ssfImage}
               alt="Share Screens Fast screenshot"
-              width={1400}
-              height={1050}
               className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
@@ -116,10 +116,8 @@ const Projects = () => {
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
-              src="/gts_1.webp"
+              src={gtsImage}
               alt="Guess The Song screenshot"
-              width={960}
-              height={720}
               className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
@@ -163,10 +161,8 @@ const Projects = () => {
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
-              src="/msc_1.webp"
+              src={mscImage}
               alt="Muscler screenshot"
-              width={960}
-              height={720}
               className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>

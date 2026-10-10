@@ -52,10 +52,11 @@ const Nav = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  const closeMenu = () => {
-    setShowMenu(false);
-    document.body.style.overflowY = "visible";
-  };
+  useEffect(() => {
+    document.body.style.overflowY = showMenu ? "hidden" : "visible";
+  }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
 
   const handleNavClick = (id: number) => {
     document
@@ -70,10 +71,7 @@ const Nav = ({ children }: { children: React.ReactNode }) => {
       <header className="sticky top-0 z-10 flex w-full justify-end p-2 mix-blend-difference md:hidden">
         <AiOutlineMenu
           className="h-10 w-10 cursor-pointer p-1 text-2xl"
-          onClick={() => {
-            setShowMenu(true);
-            document.body.style.overflowY = "hidden";
-          }}
+          onClick={() => setShowMenu(true)}
         />
       </header>
       <nav

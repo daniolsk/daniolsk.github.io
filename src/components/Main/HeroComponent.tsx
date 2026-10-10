@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import ImageOfMe from "@/../public/me.webp";
+import ImageOfMe from "@/assets/me.webp";
 
 export default function HeroComponent() {
   const [isLoaded, setIsLoaded] = useState(false);

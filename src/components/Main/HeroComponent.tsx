@@ -2,19 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
-import ImageOfMe from "@/../public/me.jpg";
+import ImageOfMe from "@/../public/me.webp";
 
 export default function HeroComponent() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.1, ease: "easeOut" }}
-      className="relative aspect-square max-h-[450px] w-full overflow-hidden rounded-xl bg-neutral-900"
-    >
+    <div className="animate-fadein relative aspect-square max-h-[450px] w-full overflow-hidden rounded-xl bg-neutral-900">
       <Image
         alt="Daniel"
         src={ImageOfMe}
@@ -26,6 +20,6 @@ export default function HeroComponent() {
         placeholder="blur"
         onLoad={() => setIsLoaded(true)}
       />
-    </motion.div>
+    </div>
   );
 }

@@ -24,7 +24,7 @@
     animation-fill-mode: backwards;
   }
   .animate-slideleft-bg {
-    animation: slideLeftBg 1s ease-out;
+    animation: slideLeftBg 0.5s ease-out;
     animation-fill-mode: backwards;
   }
   .animate-slideleft-bg-mobile {
@@ -38,6 +38,19 @@
   .animate-slideleft-bg-img-mobile {
     animation: slideLeftBgImgMobile 1s ease-out;
     animation-fill-mode: backwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeftBg {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
 }
 

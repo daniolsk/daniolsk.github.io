@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import {
   AiFillMail,
   AiFillGithub,
@@ -188,17 +187,13 @@ const Main = () => {
         ref={trailerRef}
         className={`${style.trailer} pointer-events-none fixed top-0 left-0 z-50 h-8 w-8 rounded-full border-2 border-white bg-white opacity-0 mix-blend-difference contrast-100 transition-all duration-700 ease-out after:opacity-1 after:transition-all after:duration-700 after:ease-out`}
       ></div>
-      <motion.div
-        initial={{ x: -30, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className={`${style.bgImage} fixed top-0 left-0 -z-30 h-full w-full bg-linear-to-br from-[#0c1735] to-black bg-size-[120%_120%] bg-position-[center_40%] opacity-100 transition-all duration-700 ease-out`}
-      ></motion.div>
-      <motion.div
-        initial={{ x: -30, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.6 }}
+      <div
+        className={`${style.bgImage} animate-slideleft-bg fixed top-0 left-0 -z-30 h-full w-full bg-linear-to-br from-[#0c1735] to-black bg-size-[120%_120%] bg-position-[center_40%] opacity-100 transition-all duration-700 ease-out`}
+      ></div>
+      <div
         ref={bgPatternRef}
-        className={`${style.bgPattern} bg-dots fixed top-0 left-0 -z-20 h-full w-full bg-size-[6vmin_6vmin] bg-position-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-size-[4vmin_4vmin]`}
-      ></motion.div>
+        className={`${style.bgPattern} bg-dots animate-slideleft-bg fixed top-0 left-0 -z-20 h-full w-full bg-size-[6vmin_6vmin] bg-position-[0%_0%] opacity-60 transition-all duration-700 ease-out md:bg-size-[4vmin_4vmin]`}
+      ></div>
       <div>
         <header className="sticky top-0 z-10 flex w-full justify-end p-2 mix-blend-difference md:hidden">
           <AiOutlineMenu

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Projects = () => {
@@ -21,7 +22,15 @@ const Projects = () => {
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/cpg.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src="/cpg.webp"
+              alt="Color Palette Generator screenshot"
+              width={1400}
+              height={1050}
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
           <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Color Palette Generator
@@ -50,7 +59,15 @@ const Projects = () => {
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/ssf_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src="/ssf_1.webp"
+              alt="Share Screens Fast screenshot"
+              width={1400}
+              height={1050}
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
           <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Share Screens Fast
@@ -97,7 +114,15 @@ const Projects = () => {
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/gts_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src="/gts_1.webp"
+              alt="Guess The Song screenshot"
+              width={960}
+              height={720}
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
           <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               GUESS THE SONG
@@ -136,7 +161,15 @@ const Projects = () => {
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
         >
-          <div className="aspect-video w-full bg-[url('/msc_1.png')] bg-[length:102%] bg-top brightness-[0.9] transition-all duration-200 ease-out group-hover:bg-[length:106%] group-hover:brightness-100"></div>
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src="/msc_1.webp"
+              alt="Muscler screenshot"
+              width={960}
+              height={720}
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
           <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">MUSCLER</h1>
             <h3 className="mb-2  text-neutral-300">

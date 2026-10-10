@@ -20,36 +20,25 @@ const Nav = ({ children }: { children: React.ReactNode }) => {
 
     if (!aboutMe || !contact) return;
 
-    const observer0 = new IntersectionObserver(
+    let aboutMeVisible = false;
+    let contactVisible = false;
+
+    const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setActiveTab(0);
-        } else {
-          setActiveTab(1);
+        for (const entry of entries) {
+          if (entry.target === aboutMe) aboutMeVisible = entry.isIntersecting;
+          if (entry.target === contact) contactVisible = entry.isIntersecting;
         }
+
+        setActiveTab(aboutMeVisible ? 0 : contactVisible ? 2 : 1);
       },
       { threshold: 0.1 },
     );
 
-    observer0.observe(aboutMe);
+    observer.observe(aboutMe);
+    observer.observe(contact);
 
-    const observer1 = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setActiveTab(2);
-        } else {
-          setActiveTab(1);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    observer1.observe(contact);
-
-    return () => {
-      observer0.disconnect();
-      observer1.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {

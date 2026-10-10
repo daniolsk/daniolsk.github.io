@@ -20,7 +20,7 @@ const Projects = () => {
          <Link
           href="https://color-palette-generator.danielskowron.com/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
@@ -28,10 +28,10 @@ const Projects = () => {
               alt="Color Palette Generator screenshot"
               width={1400}
               height={1050}
-              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
-          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Color Palette Generator
             </h1>
@@ -57,7 +57,7 @@ const Projects = () => {
         <Link
           href="https://share-screens-fast.danielskowron.com/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
@@ -65,10 +65,10 @@ const Projects = () => {
               alt="Share Screens Fast screenshot"
               width={1400}
               height={1050}
-              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
-          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Share Screens Fast
             </h1>
@@ -112,7 +112,7 @@ const Projects = () => {
         <Link
           href="https://guessthesong.danielskowron.com/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
@@ -120,10 +120,10 @@ const Projects = () => {
               alt="Guess The Song screenshot"
               width={960}
               height={720}
-              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
-          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               GUESS THE SONG
             </h1>
@@ -159,7 +159,7 @@ const Projects = () => {
         <Link
           href="https://muscler.danielskowron.com/"
           target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-all duration-200 ease-out hover:border-neutral-400"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
         >
           <div className="aspect-video w-full overflow-hidden">
             <Image
@@ -167,10 +167,10 @@ const Projects = () => {
               alt="Muscler screenshot"
               width={960}
               height={720}
-              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-all duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
             />
           </div>
-          <div className="bg-black p-4 transition-all duration-200 ease-out group-hover:bg-[#0c0c0c]">
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">MUSCLER</h1>
             <h3 className="mb-2  text-neutral-300">
               An app that allows you to track your performance at the gym,

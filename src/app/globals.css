@@ -50,7 +50,7 @@
 @keyframes slideLeftBg {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    translate: -30px 0;
   }
 }
 

@@ -14,7 +14,7 @@ export default function HeroComponent() {
         src={ImageOfMe}
         fill
         priority
-        className={`object-cover transition-all duration-200 ease-out group-hover:scale-105 ${
+        className={`object-cover transition-[scale,filter] duration-200 ease-out group-hover:scale-105 ${
           isLoaded ? "blur-0" : "blur-xl"
         }`}
         placeholder="blur"

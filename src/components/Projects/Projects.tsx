@@ -79,6 +79,51 @@ const Projects = () => {
           </div>
         </Link>
         <Link
+          href="https://guessthesong.danielskowron.com/"
+          target="_blank"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
+        >
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src={gtsImage}
+              alt="Guess The Song screenshot"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
+            <h1 className="mb-2 text-xl font-bold tracking-tighter">
+              GUESS THE SONG
+            </h1>
+            <h3 className="mb-2 text-neutral-300">
+              A browser-based game that involves guessing the name of a song or
+              album by knowing a snippet of its lyrics, author or track listing.
+            </h3>
+            <div className="flex flex-wrap gap-1">
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                TypeScript
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Next.js
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                React.js
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Tailwind CSS
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Spotify API
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Genius Lyrics API
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Vercel
+              </div>
+            </div>
+          </div>
+        </Link>
+        <Link
           href="https://color-palette-generator.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
@@ -164,51 +209,6 @@ const Projects = () => {
               </div>
               <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
                 Stripe
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                Vercel
-              </div>
-            </div>
-          </div>
-        </Link>
-        <Link
-          href="https://guessthesong.danielskowron.com/"
-          target="_blank"
-          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
-        >
-          <div className="aspect-video w-full overflow-hidden">
-            <Image
-              src={gtsImage}
-              alt="Guess The Song screenshot"
-              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
-            />
-          </div>
-          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
-            <h1 className="mb-2 text-xl font-bold tracking-tighter">
-              GUESS THE SONG
-            </h1>
-            <h3 className="mb-2 text-neutral-300">
-              A browser-based game that involves guessing the name of a song or
-              album by knowing a snippet of its lyrics, author or track listing.
-            </h3>
-            <div className="flex flex-wrap gap-1">
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                TypeScript
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                Next.js
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                React.js
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                Tailwind CSS
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                Spotify API
-              </div>
-              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
-                Genius Lyrics API
               </div>
               <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
                 Vercel

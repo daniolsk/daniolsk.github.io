@@ -4,6 +4,7 @@ import cpgImage from "@/assets/cpg.webp";
 import ssfImage from "@/assets/ssf_1.webp";
 import gtsImage from "@/assets/gts_1.webp";
 import mscImage from "@/assets/msc_1.webp";
+import spendlyImage from "@/assets/spendly.webp";
 
 const Projects = () => {
   return (
@@ -21,7 +22,63 @@ const Projects = () => {
         .
       </h1>
       <div className="flex flex-col gap-6">
-         <Link
+        <Link
+          href="https://spendly.danielskowron.com/"
+          target="_blank"
+          className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
+        >
+          <div className="aspect-video w-full overflow-hidden">
+            <Image
+              src={spendlyImage}
+              alt="Spendly screenshot"
+              className="h-full w-full origin-top scale-[1.02] object-cover object-top brightness-[0.9] transition-[scale,filter] duration-200 ease-out group-hover:scale-[1.06] group-hover:brightness-100"
+            />
+          </div>
+          <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
+            <h1 className="mb-2 text-xl font-bold tracking-tighter">Spendly</h1>
+            <h3 className="mb-2 text-neutral-300">
+              A personal expense tracker with Google sign-in. Lets you log
+              expenses and income in seconds (also on your phone), set monthly
+              spending plans per category and compare them with what you
+              actually spent, track refunds and your balance since start, and
+              review income, expenses and spending by category in month and year
+              statistics with charts.
+            </h3>
+            <div className="flex flex-wrap gap-1">
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                TypeScript
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Next.js
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                React.js
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Tailwind CSS
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                shadcn/ui
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Better Auth
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Drizzle ORM
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Neon PostgreSQL
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Recharts
+              </div>
+              <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
+                Vercel
+              </div>
+            </div>
+          </div>
+        </Link>
+        <Link
           href="https://color-palette-generator.danielskowron.com/"
           target="_blank"
           className="group relative flex flex-col justify-end overflow-hidden rounded-xl border-[1px] border-neutral-500 transition-colors duration-200 ease-out hover:border-neutral-400"
@@ -37,8 +94,13 @@ const Projects = () => {
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Color Palette Generator
             </h1>
-            <h3 className="mb-2  text-neutral-300">
-              A color palette generation and visualization application. It allows users to select a base color using an interactive color wheel and brightness slider, then automatically generates complementary and accent colors. The resulting palette is presented through three different visual representations, making it easy to explore and compare color schemes.
+            <h3 className="mb-2 text-neutral-300">
+              A color palette generation and visualization application. It
+              allows users to select a base color using an interactive color
+              wheel and brightness slider, then automatically generates
+              complementary and accent colors. The resulting palette is
+              presented through three different visual representations, making
+              it easy to explore and compare color schemes.
             </h3>
             <div className="flex flex-wrap gap-1">
               <div className="flex items-center justify-center rounded-full bg-sky-900 px-2 py-1 text-xs">
@@ -72,7 +134,7 @@ const Projects = () => {
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               Share Screens Fast
             </h1>
-            <h3 className="mb-2  text-neutral-300">
+            <h3 className="mb-2 text-neutral-300">
               A fully functioning application in the SaaS model (along with a
               traditional subscription model - payments made using the Stripe
               platform). Allows you to quickly transfer photos between devices
@@ -125,7 +187,7 @@ const Projects = () => {
             <h1 className="mb-2 text-xl font-bold tracking-tighter">
               GUESS THE SONG
             </h1>
-            <h3 className="mb-2  text-neutral-300">
+            <h3 className="mb-2 text-neutral-300">
               A browser-based game that involves guessing the name of a song or
               album by knowing a snippet of its lyrics, author or track listing.
             </h3>
@@ -168,7 +230,7 @@ const Projects = () => {
           </div>
           <div className="bg-black p-4 transition-colors duration-200 ease-out group-hover:bg-[#0c0c0c]">
             <h1 className="mb-2 text-xl font-bold tracking-tighter">MUSCLER</h1>
-            <h3 className="mb-2  text-neutral-300">
+            <h3 className="mb-2 text-neutral-300">
               An app that allows you to track your performance at the gym,
               record and plan your workout sessions (also with series, number of
               repetitions during a given exercise or weight).
